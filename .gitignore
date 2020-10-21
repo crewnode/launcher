@@ -1,0 +1,12 @@
+**/.vs/**
+*/obj
+
+# Signed DLLs (Packages)
+*/bin/Debug/*
+!*/bin/Debug/*-dlls/
+*/bin/Release/*
+!*/bin/Release/*-dlls/
+
+# Signing Keys
+*/Security/Keys/*.pfx
+*/Security/Keys/*.snk
