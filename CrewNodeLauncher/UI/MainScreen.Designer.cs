@@ -161,6 +161,7 @@
             this.loginRegisterBtn.Size = new System.Drawing.Size(247, 59);
             this.loginRegisterBtn.TabIndex = 8;
             this.loginRegisterBtn.Text = "Login or Register";
+            this.loginRegisterBtn.Click += new System.EventHandler(this.loginRegisterBtn_Click);
             // 
             // cnLauncherVersion
             // 
@@ -547,7 +548,6 @@
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrewNode";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.navPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cnImage2)).EndInit();

@@ -20,19 +20,20 @@ namespace CrewNodeLauncher
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // Splashscreen & system tray
-            var startup = new Startup()
-                .ShowPreloader()
-                .InitialiseSystemTray()
-                .GetRemoteVersion()
-                .SetupMainScreen(args)
-                .Finalise();
-            Application.ApplicationExit += (object sender, EventArgs e) => startup.CloseSystemTray();
-
             // Register Protocol for "crewnode://"
             // ProtocolHandler.Register();
 
             // Run application
+            var startup = new Startup();
+            Application.ApplicationExit += (object sender, EventArgs e) => startup.CloseSystemTray();
+            startup
+                .ShowPreloader()
+                //.InitialiseSystemTray()
+                .GetRemoteVersion()
+                .SetupMainScreen(args)
+                .Finalise();
+
+            // Cleanup
             startup.GetMainThread().Join();
             Environment.Exit(0);
         }

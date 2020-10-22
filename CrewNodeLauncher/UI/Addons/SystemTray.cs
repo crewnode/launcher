@@ -14,9 +14,8 @@ namespace CrewNodeLauncher.UI.Addons
             trayIcon = new NotifyIcon()
             {
                 Icon = Resources.CrewNodeLauncher,
-                ContextMenu = new ContextMenu(new MenuItem[]
-                {
-                        new MenuItem("Exit", (object sender, EventArgs e) => Environment.Exit(0))
+                ContextMenu = new ContextMenu(new MenuItem[] {
+                    new MenuItem("Exit", (object sender, EventArgs e) => Application.Exit())
                 }),
                 Visible = true,
                 Text = Application.CompanyName,

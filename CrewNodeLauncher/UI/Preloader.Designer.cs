@@ -156,6 +156,7 @@ namespace CrewNodeLauncher.UI
             this.Controls.Add(this.gunaLabel1);
             this.Controls.Add(this.gunaCircleProgressBar1);
             this.Controls.Add(this.upperPanel);
+            this.Cursor = System.Windows.Forms.Cursors.AppStarting;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Preloader";
             this.ShowIcon = false;

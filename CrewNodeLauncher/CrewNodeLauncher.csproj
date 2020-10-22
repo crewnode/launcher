@@ -73,6 +73,9 @@
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\..\Downloads\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna.UI.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Semver, Version=2.0.6.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>bin\Debug\signed-dlls\Semver.dll</HintPath>
@@ -98,6 +101,12 @@
     </Compile>
     <Compile Include="UI\Components\Launcher.Designer.cs">
       <DependentUpon>Launcher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Components\LoginRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\LoginRegister.Designer.cs">
+      <DependentUpon>LoginRegister.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\Components\NotYetAdded.cs">
       <SubType>Form</SubType>
@@ -138,6 +147,9 @@
     <Compile Include="Utils\Updater.cs" />
     <EmbeddedResource Include="UI\Components\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\LoginRegister.resx">
+      <DependentUpon>LoginRegister.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\NotYetAdded.resx">
       <DependentUpon>NotYetAdded.cs</DependentUpon>

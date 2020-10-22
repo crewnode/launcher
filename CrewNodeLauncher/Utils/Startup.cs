@@ -86,7 +86,6 @@ namespace CrewNodeLauncher.Utils
                 new ThreadStart(() => {
                     _mainScreen = new MainScreen(args);
                     _mainScreen.Visible = false;
-                    Application.Run(_mainScreen);
                 })
             );
             _mainThread.IsBackground = true;
@@ -94,7 +93,7 @@ namespace CrewNodeLauncher.Utils
             _mainThread.Start();
 
             // Wait until the splash screen has been created
-            while (_mainScreen == null || !_mainScreen.IsHandleCreated)
+            //while (_mainScreen == null || !_mainScreen.IsHandleCreated)
                 Thread.Sleep(100);
             return this;
         }
@@ -103,6 +102,7 @@ namespace CrewNodeLauncher.Utils
         {
             SetLoaderText("Ready!");
             _preloader.Invoke((MethodInvoker)delegate () {
+                _preloader.Cursor = Cursors.Default;
                 for (int i = _preloader.gunaCircleProgressBar1.Value; i <= 100; i++)
                 {
                     _preloader.gunaCircleProgressBar1.Value++;
@@ -130,10 +130,7 @@ namespace CrewNodeLauncher.Utils
             _loaderThread.Abort();
 
             // Setup Main Screen
-            _mainScreen.Invoke((MethodInvoker)delegate () {
-                _mainScreen.Show();
-            });
-
+            Application.Run(_mainScreen);
             return this;
         }
                 
@@ -143,13 +140,23 @@ namespace CrewNodeLauncher.Utils
             _systemTray.Hide();
             _systemTray.ExitThread();
             _trayThread.Abort();
+
+            // Closed before initialisation
+            if (_mainScreen == null || !_mainScreen.IsHandleCreated)
+                Environment.Exit(0);
         }
 
-        public void DisplayForm() =>
-            _mainScreen.Invoke((MethodInvoker)delegate () {
+        public void DisplayForm()
+        {
+            if (_mainScreen == null) return;
+            _mainScreen.Invoke((MethodInvoker)delegate ()
+            {
+                if (!_mainScreen.IsHandleCreated) return;
                 _mainScreen.Show();
             });
+        }
 
         public Thread GetMainThread() => _mainThread;
+        public bool IsTrayRunning() => _systemTray != null;
     }
 }

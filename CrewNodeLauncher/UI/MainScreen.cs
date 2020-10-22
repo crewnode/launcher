@@ -1,12 +1,15 @@
-﻿using CrewNodeLauncher.Utils;
+﻿using CrewNodeLauncher.API;
+using CrewNodeLauncher.Utils;
 using FontAwesome.Sharp;
 using Guna.UI.Lib.ScrollBar;
 using Guna.UI.WinForms;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Security.Principal;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -85,7 +88,8 @@ namespace CrewNodeLauncher
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Hide();
+            if ((new Startup()).IsTrayRunning()) Hide();
+            else Application.Exit();
         }
 
         private void minimizeButton_Click(object sender, EventArgs e)
@@ -125,6 +129,7 @@ namespace CrewNodeLauncher
             {
                 launcherBtn,
                 pluginsBtn,
+                loginRegisterBtn,
                 leaderboardBtn,
                 newsBtn,
                 settingsBtn
@@ -133,7 +138,8 @@ namespace CrewNodeLauncher
             navForms = new List<Form>()
             {
                 new UI.Components.Launcher(),
-                new UI.Components.Plugins()
+                new UI.Components.Plugins(),
+                new UI.Components.LoginRegister()
             };
 
             int i = 0;
@@ -250,10 +256,15 @@ namespace CrewNodeLauncher
             contentPanel.Controls.Add(notYetAdded);
         }
 
-        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
+        private void loginRegisterBtn_Click(object sender, EventArgs e)
         {
-            e.Cancel = true;
+            updateSelectedNav((GunaAdvenceButton)sender);
+            innerFormName.Text = "Authenticate";
         }
+
+        public static bool IsAdministrator =>
+           new WindowsPrincipal(WindowsIdentity.GetCurrent())
+               .IsInRole(WindowsBuiltInRole.Administrator);
 
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)
         {
