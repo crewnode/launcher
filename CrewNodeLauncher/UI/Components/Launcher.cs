@@ -1,4 +1,5 @@
-﻿using Guna.UI.WinForms;
+﻿using FontAwesome.Sharp;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,12 +17,33 @@ namespace CrewNodeLauncher.UI.Components
         public Launcher()
         {
             InitializeComponent();
+            playBtn.Tag = "playPanel";
+            patchBtn.Tag = "patchPanel";
+            rmPatchBtn.Tag = "rmPatchPanel";
         }
 
-        private void tile_Click(object sender, EventArgs e)
+        private void Launcher_Load(object sender, EventArgs e)
         {
-            GunaTileButton gtb = (GunaTileButton)sender;
-            gtb.BaseColor = Color.Red;
+            // Update TabControl
+            launcherTabs.Appearance = TabAppearance.FlatButtons;
+            launcherTabs.ItemSize = new Size(0, 1);
+            launcherTabs.SizeMode = TabSizeMode.Fixed;
+
+            // FontAwesome Icons
+            launchGameBtn.Image = IconChar.Play.ToBitmap(Color.White);
+        }
+
+        private void PanelTab_Click(object sender, EventArgs e)
+        {
+            GunaAdvenceButton btn = (GunaAdvenceButton)sender;
+            if (btn.Tag == null) return;
+            launcherTabs.TabPages[(string) btn.Tag].Select();
+
+            // Reset check states
+            playBtn.Checked = false;
+            patchBtn.Checked = false;
+            rmPatchBtn.Checked = false;
+            btn.Checked = true;
         }
     }
 }

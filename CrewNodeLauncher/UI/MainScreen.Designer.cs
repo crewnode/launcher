@@ -72,7 +72,7 @@
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(245, 578);
+            this.navPanel.Size = new System.Drawing.Size(246, 578);
             this.navPanel.TabIndex = 0;
             this.navPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.navPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -361,9 +361,9 @@
             this.upperPanel.Controls.Add(this.innerFormName);
             this.upperPanel.Controls.Add(this.headerPanel);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.upperPanel.Location = new System.Drawing.Point(245, 0);
+            this.upperPanel.Location = new System.Drawing.Point(246, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(882, 92);
+            this.upperPanel.Size = new System.Drawing.Size(881, 92);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.upperPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -393,7 +393,7 @@
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(882, 39);
+            this.headerPanel.Size = new System.Drawing.Size(881, 39);
             this.headerPanel.TabIndex = 2;
             this.headerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -432,7 +432,7 @@
             this.exitButton.ImageSize = new System.Drawing.Size(20, 20);
             this.exitButton.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.exitButton.LineTop = 2;
-            this.exitButton.Location = new System.Drawing.Point(846, 7);
+            this.exitButton.Location = new System.Drawing.Point(845, 7);
             this.exitButton.Name = "exitButton";
             this.exitButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
             this.exitButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -465,7 +465,7 @@
             this.minimizeButton.ImageSize = new System.Drawing.Size(20, 20);
             this.minimizeButton.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.minimizeButton.LineTop = 2;
-            this.minimizeButton.Location = new System.Drawing.Point(817, 7);
+            this.minimizeButton.Location = new System.Drawing.Point(816, 7);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
             this.minimizeButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -496,11 +496,11 @@
             // 
             // contentPanel
             // 
-            this.contentPanel.BackColor = System.Drawing.Color.White;
+            this.contentPanel.BackColor = System.Drawing.SystemColors.Control;
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(245, 92);
+            this.contentPanel.Location = new System.Drawing.Point(246, 92);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(882, 486);
+            this.contentPanel.Size = new System.Drawing.Size(881, 486);
             this.contentPanel.TabIndex = 2;
             this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
             this.contentPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
@@ -527,7 +527,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1127, 578);
             this.Controls.Add(this.gunaHScrollBar1);
             this.Controls.Add(this.gunaVScrollBar1);

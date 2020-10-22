@@ -1,7 +1,7 @@
 ﻿
 namespace CrewNodeLauncher.UI.Components
 {
-    partial class Updater
+    partial class Plugins
     {
         /// <summary>
         /// Required designer variable.
@@ -34,24 +34,25 @@ namespace CrewNodeLauncher.UI.Components
             // 
             // gunaLabel1
             // 
+            this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.Location = new System.Drawing.Point(285, 180);
+            this.gunaLabel1.Location = new System.Drawing.Point(375, 180);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(230, 23);
-            this.gunaLabel1.TabIndex = 1;
-            this.gunaLabel1.Text = "There is an update available.";
-            this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.gunaLabel1.Size = new System.Drawing.Size(50, 15);
+            this.gunaLabel1.TabIndex = 0;
+            this.gunaLabel1.Text = "hi world";
             // 
-            // Updater
+            // Plugins
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 383);
+            this.ClientSize = new System.Drawing.Size(800, 375);
             this.Controls.Add(this.gunaLabel1);
-            this.Name = "Updater";
-            this.Text = "Updater";
+            this.Name = "Plugins";
+            this.Text = "Plugins";
+            this.Load += new System.EventHandler(this.Plugins_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -125,7 +125,8 @@ namespace CrewNodeLauncher
 
             navForms = new List<Form>()
             {
-                new UI.Components.Launcher()
+                new UI.Components.Launcher(),
+                new UI.Components.Plugins()
             };
 
             int i = 0;
@@ -134,7 +135,6 @@ namespace CrewNodeLauncher
                 f.TopLevel = false;
                 f.FormBorderStyle = FormBorderStyle.None;
                 f.BackColor = BackColor;
-                f.Width = 865;
                 f.Tag = i;
                 navItems[i].Controls.Add(f);
                 i++;
@@ -224,8 +224,8 @@ namespace CrewNodeLauncher
 
         private void contentPanel_Resize(object sender, EventArgs e)
         {
-            if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
             if (hScrollHelper != null) hScrollHelper.UpdateScrollBar();
+            if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
         }
 
         private void updateAvailableBtn_Click(object sender, EventArgs e)
@@ -246,7 +246,15 @@ namespace CrewNodeLauncher
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)
         {
             if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
-            if (hScrollHelper != null) hScrollHelper.UpdateScrollBar();
+            if (vScrollHelper != null)
+            {
+                vScrollHelper.UpdateScrollBar();
+                if (!contentPanel.VerticalScroll.Visible)
+                {
+                    foreach (Control c in contentPanel.Controls)
+                        c.Width = 880;
+                }
+            }
         }
     }
 }

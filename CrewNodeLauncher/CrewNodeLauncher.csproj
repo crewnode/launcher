@@ -104,6 +104,12 @@
     <Compile Include="UI\Components\NotYetAdded.Designer.cs">
       <DependentUpon>NotYetAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Components\Plugins.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\Plugins.Designer.cs">
+      <DependentUpon>Plugins.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Updater.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\NotYetAdded.resx">
       <DependentUpon>NotYetAdded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\Plugins.resx">
+      <DependentUpon>Plugins.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Updater.resx">
       <DependentUpon>Updater.cs</DependentUpon>

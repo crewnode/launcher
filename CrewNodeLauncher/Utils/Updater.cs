@@ -14,7 +14,7 @@ namespace CrewNodeLauncher.Utils
 
         public static SemVersion getRemoteVersion()
         {
-            return new SemVersion(0, 0, 2, "unknown");
+            return new SemVersion(0, 0, 1, "alpha1");
         }
 
         public static SemVersion getLocalVersion()

@@ -30,424 +30,282 @@ namespace CrewNodeLauncher.UI.Components
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
-            this.gunaTileButton17 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton18 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton19 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton20 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton11 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton12 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton8 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton9 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton5 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton6 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton2 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton1 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton10 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton23 = new Guna.UI.WinForms.GunaTileButton();
-            this.gunaTileButton24 = new Guna.UI.WinForms.GunaTileButton();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.rmPatchBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.patchBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.playBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
+            this.launcherTabs = new System.Windows.Forms.TabControl();
+            this.playPanel = new System.Windows.Forms.TabPage();
+            this.patchPanel = new System.Windows.Forms.TabPage();
+            this.rmPatchPanel = new System.Windows.Forms.TabPage();
+            this.launchGameBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.gunaPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
+            this.launcherTabs.SuspendLayout();
+            this.playPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gunaTileButton17
+            // gunaPanel1
             // 
-            this.gunaTileButton17.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton17.AnimationSpeed = 0.03F;
-            this.gunaTileButton17.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton17.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton17.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton17.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton17.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton17.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton17.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton17.Image")));
-            this.gunaTileButton17.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton17.Location = new System.Drawing.Point(510, 12);
-            this.gunaTileButton17.Name = "gunaTileButton17";
-            this.gunaTileButton17.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton17.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton17.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton17.OnHoverImage = null;
-            this.gunaTileButton17.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton17.Size = new System.Drawing.Size(160, 100);
-            this.gunaTileButton17.TabIndex = 42;
-            this.gunaTileButton17.Text = "gunaTileButton17";
-            this.gunaTileButton17.Click += new System.EventHandler(this.tile_Click);
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.gunaPanel1.Controls.Add(this.rmPatchBtn);
+            this.gunaPanel1.Controls.Add(this.patchBtn);
+            this.gunaPanel1.Controls.Add(this.playBtn);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(864, 48);
+            this.gunaPanel1.TabIndex = 0;
             // 
-            // gunaTileButton18
+            // rmPatchBtn
             // 
-            this.gunaTileButton18.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton18.AnimationSpeed = 0.03F;
-            this.gunaTileButton18.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton18.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton18.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton18.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton18.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton18.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton18.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton18.Image")));
-            this.gunaTileButton18.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton18.Location = new System.Drawing.Point(344, 12);
-            this.gunaTileButton18.Name = "gunaTileButton18";
-            this.gunaTileButton18.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton18.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton18.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton18.OnHoverImage = null;
-            this.gunaTileButton18.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton18.Size = new System.Drawing.Size(160, 100);
-            this.gunaTileButton18.TabIndex = 41;
-            this.gunaTileButton18.Text = "gunaTileButton18";
-            this.gunaTileButton18.Click += new System.EventHandler(this.tile_Click);
+            this.rmPatchBtn.AnimationHoverSpeed = 0.07F;
+            this.rmPatchBtn.AnimationSpeed = 0.03F;
+            this.rmPatchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.rmPatchBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.rmPatchBtn.BorderColor = System.Drawing.Color.Black;
+            this.rmPatchBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.rmPatchBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.rmPatchBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.rmPatchBtn.CheckedImage = null;
+            this.rmPatchBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.rmPatchBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.rmPatchBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.rmPatchBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.rmPatchBtn.ForeColor = System.Drawing.Color.Gray;
+            this.rmPatchBtn.Image = null;
+            this.rmPatchBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.rmPatchBtn.LineBottom = 2;
+            this.rmPatchBtn.LineColor = System.Drawing.Color.Transparent;
+            this.rmPatchBtn.Location = new System.Drawing.Point(766, 0);
+            this.rmPatchBtn.Name = "rmPatchBtn";
+            this.rmPatchBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.rmPatchBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.rmPatchBtn.OnHoverForeColor = System.Drawing.Color.LightGray;
+            this.rmPatchBtn.OnHoverImage = null;
+            this.rmPatchBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.rmPatchBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.rmPatchBtn.Size = new System.Drawing.Size(98, 48);
+            this.rmPatchBtn.TabIndex = 3;
+            this.rmPatchBtn.Text = "Remove Patch";
+            this.rmPatchBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.rmPatchBtn.Click += new System.EventHandler(this.PanelTab_Click);
             // 
-            // gunaTileButton19
+            // patchBtn
             // 
-            this.gunaTileButton19.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton19.AnimationSpeed = 0.03F;
-            this.gunaTileButton19.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton19.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton19.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton19.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton19.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton19.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton19.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton19.Image")));
-            this.gunaTileButton19.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton19.Location = new System.Drawing.Point(178, 12);
-            this.gunaTileButton19.Name = "gunaTileButton19";
-            this.gunaTileButton19.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton19.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton19.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton19.OnHoverImage = null;
-            this.gunaTileButton19.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton19.Size = new System.Drawing.Size(160, 100);
-            this.gunaTileButton19.TabIndex = 40;
-            this.gunaTileButton19.Text = "gunaTileButton19";
-            this.gunaTileButton19.Click += new System.EventHandler(this.tile_Click);
+            this.patchBtn.AnimationHoverSpeed = 0.07F;
+            this.patchBtn.AnimationSpeed = 0.03F;
+            this.patchBtn.BackColor = System.Drawing.Color.Transparent;
+            this.patchBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.patchBtn.BorderColor = System.Drawing.Color.Black;
+            this.patchBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.patchBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.patchBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.patchBtn.CheckedImage = null;
+            this.patchBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.patchBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.patchBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.patchBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.patchBtn.ForeColor = System.Drawing.Color.Gray;
+            this.patchBtn.Image = null;
+            this.patchBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.patchBtn.LineBottom = 2;
+            this.patchBtn.LineColor = System.Drawing.Color.Transparent;
+            this.patchBtn.Location = new System.Drawing.Point(72, 0);
+            this.patchBtn.Name = "patchBtn";
+            this.patchBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.patchBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.patchBtn.OnHoverForeColor = System.Drawing.Color.LightGray;
+            this.patchBtn.OnHoverImage = null;
+            this.patchBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.patchBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.patchBtn.Size = new System.Drawing.Size(107, 48);
+            this.patchBtn.TabIndex = 2;
+            this.patchBtn.Text = "Patch";
+            this.patchBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.patchBtn.Click += new System.EventHandler(this.PanelTab_Click);
             // 
-            // gunaTileButton20
+            // playBtn
             // 
-            this.gunaTileButton20.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton20.AnimationSpeed = 0.03F;
-            this.gunaTileButton20.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton20.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton20.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton20.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton20.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton20.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton20.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton20.Image")));
-            this.gunaTileButton20.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton20.Location = new System.Drawing.Point(12, 12);
-            this.gunaTileButton20.Name = "gunaTileButton20";
-            this.gunaTileButton20.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton20.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton20.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton20.OnHoverImage = null;
-            this.gunaTileButton20.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton20.Size = new System.Drawing.Size(160, 100);
-            this.gunaTileButton20.TabIndex = 39;
-            this.gunaTileButton20.Text = "gunaTileButton20";
-            this.gunaTileButton20.Click += new System.EventHandler(this.tile_Click);
+            this.playBtn.AnimationHoverSpeed = 0.07F;
+            this.playBtn.AnimationSpeed = 0.03F;
+            this.playBtn.BackColor = System.Drawing.Color.Transparent;
+            this.playBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.playBtn.BorderColor = System.Drawing.Color.Black;
+            this.playBtn.Checked = true;
+            this.playBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.playBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.playBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.playBtn.CheckedImage = null;
+            this.playBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.playBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.playBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.playBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.playBtn.ForeColor = System.Drawing.Color.Gray;
+            this.playBtn.Image = null;
+            this.playBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.playBtn.LineBottom = 2;
+            this.playBtn.LineColor = System.Drawing.Color.Transparent;
+            this.playBtn.Location = new System.Drawing.Point(12, 0);
+            this.playBtn.Name = "playBtn";
+            this.playBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.playBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.playBtn.OnHoverForeColor = System.Drawing.Color.LightGray;
+            this.playBtn.OnHoverImage = null;
+            this.playBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.playBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.playBtn.Size = new System.Drawing.Size(60, 48);
+            this.playBtn.TabIndex = 1;
+            this.playBtn.Text = "Play";
+            this.playBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.playBtn.Click += new System.EventHandler(this.PanelTab_Click);
             // 
-            // gunaTileButton11
+            // gunaPictureBox1
             // 
-            this.gunaTileButton11.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton11.AnimationSpeed = 0.03F;
-            this.gunaTileButton11.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton11.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton11.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton11.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton11.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton11.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton11.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton11.Image")));
-            this.gunaTileButton11.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton11.Location = new System.Drawing.Point(510, 284);
-            this.gunaTileButton11.Name = "gunaTileButton11";
-            this.gunaTileButton11.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton11.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton11.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton11.OnHoverImage = null;
-            this.gunaTileButton11.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton11.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton11.TabIndex = 31;
-            this.gunaTileButton11.Text = "gunaTileButton11";
-            this.gunaTileButton11.Click += new System.EventHandler(this.tile_Click);
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(0, 48);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(864, 437);
+            this.gunaPictureBox1.TabIndex = 1;
+            this.gunaPictureBox1.TabStop = false;
             // 
-            // gunaTileButton12
+            // launcherTabs
             // 
-            this.gunaTileButton12.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton12.AnimationSpeed = 0.03F;
-            this.gunaTileButton12.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton12.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton12.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton12.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton12.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton12.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton12.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton12.Image")));
-            this.gunaTileButton12.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton12.Location = new System.Drawing.Point(510, 118);
-            this.gunaTileButton12.Name = "gunaTileButton12";
-            this.gunaTileButton12.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton12.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton12.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton12.OnHoverImage = null;
-            this.gunaTileButton12.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton12.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton12.TabIndex = 30;
-            this.gunaTileButton12.Text = "gunaTileButton12";
-            this.gunaTileButton12.Click += new System.EventHandler(this.tile_Click);
+            this.launcherTabs.Controls.Add(this.playPanel);
+            this.launcherTabs.Controls.Add(this.patchPanel);
+            this.launcherTabs.Controls.Add(this.rmPatchPanel);
+            this.launcherTabs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.launcherTabs.Location = new System.Drawing.Point(0, 48);
+            this.launcherTabs.Name = "launcherTabs";
+            this.launcherTabs.SelectedIndex = 0;
+            this.launcherTabs.Size = new System.Drawing.Size(864, 437);
+            this.launcherTabs.TabIndex = 2;
             // 
-            // gunaTileButton8
+            // playPanel
             // 
-            this.gunaTileButton8.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton8.AnimationSpeed = 0.03F;
-            this.gunaTileButton8.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton8.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton8.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton8.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton8.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton8.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton8.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton8.Image")));
-            this.gunaTileButton8.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton8.Location = new System.Drawing.Point(344, 284);
-            this.gunaTileButton8.Name = "gunaTileButton8";
-            this.gunaTileButton8.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton8.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton8.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton8.OnHoverImage = null;
-            this.gunaTileButton8.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton8.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton8.TabIndex = 29;
-            this.gunaTileButton8.Text = "gunaTileButton8";
-            this.gunaTileButton8.Click += new System.EventHandler(this.tile_Click);
+            this.playPanel.Controls.Add(this.gunaAdvenceButton1);
+            this.playPanel.Controls.Add(this.launchGameBtn);
+            this.playPanel.Location = new System.Drawing.Point(4, 22);
+            this.playPanel.Name = "playPanel";
+            this.playPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.playPanel.Size = new System.Drawing.Size(856, 411);
+            this.playPanel.TabIndex = 0;
+            this.playPanel.Text = "Play";
+            this.playPanel.UseVisualStyleBackColor = true;
             // 
-            // gunaTileButton9
+            // patchPanel
             // 
-            this.gunaTileButton9.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton9.AnimationSpeed = 0.03F;
-            this.gunaTileButton9.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton9.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton9.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton9.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton9.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton9.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton9.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton9.Image")));
-            this.gunaTileButton9.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton9.Location = new System.Drawing.Point(344, 118);
-            this.gunaTileButton9.Name = "gunaTileButton9";
-            this.gunaTileButton9.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton9.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton9.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton9.OnHoverImage = null;
-            this.gunaTileButton9.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton9.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton9.TabIndex = 28;
-            this.gunaTileButton9.Text = "gunaTileButton9";
-            this.gunaTileButton9.Click += new System.EventHandler(this.tile_Click);
+            this.patchPanel.Location = new System.Drawing.Point(4, 22);
+            this.patchPanel.Name = "patchPanel";
+            this.patchPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.patchPanel.Size = new System.Drawing.Size(856, 367);
+            this.patchPanel.TabIndex = 1;
+            this.patchPanel.Text = "Patch";
+            this.patchPanel.UseVisualStyleBackColor = true;
             // 
-            // gunaTileButton5
+            // rmPatchPanel
             // 
-            this.gunaTileButton5.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton5.AnimationSpeed = 0.03F;
-            this.gunaTileButton5.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton5.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton5.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton5.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton5.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton5.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton5.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton5.Image")));
-            this.gunaTileButton5.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton5.Location = new System.Drawing.Point(178, 284);
-            this.gunaTileButton5.Name = "gunaTileButton5";
-            this.gunaTileButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton5.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton5.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton5.OnHoverImage = null;
-            this.gunaTileButton5.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton5.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton5.TabIndex = 27;
-            this.gunaTileButton5.Text = "gunaTileButton5";
-            this.gunaTileButton5.Click += new System.EventHandler(this.tile_Click);
+            this.rmPatchPanel.Location = new System.Drawing.Point(4, 22);
+            this.rmPatchPanel.Name = "rmPatchPanel";
+            this.rmPatchPanel.Size = new System.Drawing.Size(856, 367);
+            this.rmPatchPanel.TabIndex = 2;
+            this.rmPatchPanel.Text = "Remove Patch";
+            this.rmPatchPanel.UseVisualStyleBackColor = true;
             // 
-            // gunaTileButton6
+            // launchGameBtn
             // 
-            this.gunaTileButton6.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton6.AnimationSpeed = 0.03F;
-            this.gunaTileButton6.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton6.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton6.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton6.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton6.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton6.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton6.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton6.Image")));
-            this.gunaTileButton6.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton6.Location = new System.Drawing.Point(178, 118);
-            this.gunaTileButton6.Name = "gunaTileButton6";
-            this.gunaTileButton6.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton6.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton6.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton6.OnHoverImage = null;
-            this.gunaTileButton6.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton6.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton6.TabIndex = 26;
-            this.gunaTileButton6.Text = "gunaTileButton6";
-            this.gunaTileButton6.Click += new System.EventHandler(this.tile_Click);
+            this.launchGameBtn.AnimationHoverSpeed = 0.07F;
+            this.launchGameBtn.AnimationSpeed = 0.03F;
+            this.launchGameBtn.BaseColor = System.Drawing.Color.Green;
+            this.launchGameBtn.BorderColor = System.Drawing.Color.Black;
+            this.launchGameBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.launchGameBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.launchGameBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.launchGameBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("launchGameBtn.CheckedImage")));
+            this.launchGameBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.launchGameBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.launchGameBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.launchGameBtn.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.launchGameBtn.ForeColor = System.Drawing.Color.White;
+            this.launchGameBtn.Image = ((System.Drawing.Image)(resources.GetObject("launchGameBtn.Image")));
+            this.launchGameBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.launchGameBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.launchGameBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.launchGameBtn.Location = new System.Drawing.Point(800, 360);
+            this.launchGameBtn.Name = "launchGameBtn";
+            this.launchGameBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.launchGameBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.launchGameBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.launchGameBtn.OnHoverImage = null;
+            this.launchGameBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.launchGameBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.launchGameBtn.Size = new System.Drawing.Size(49, 43);
+            this.launchGameBtn.TabIndex = 2;
             // 
-            // gunaTileButton2
+            // gunaAdvenceButton1
             // 
-            this.gunaTileButton2.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton2.AnimationSpeed = 0.03F;
-            this.gunaTileButton2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton2.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton2.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton2.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton2.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton2.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton2.Image")));
-            this.gunaTileButton2.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton2.Location = new System.Drawing.Point(12, 284);
-            this.gunaTileButton2.Name = "gunaTileButton2";
-            this.gunaTileButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton2.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton2.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton2.OnHoverImage = null;
-            this.gunaTileButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton2.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton2.TabIndex = 25;
-            this.gunaTileButton2.Text = "gunaTileButton2";
-            this.gunaTileButton2.Click += new System.EventHandler(this.tile_Click);
-            // 
-            // gunaTileButton1
-            // 
-            this.gunaTileButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton1.AnimationSpeed = 0.03F;
-            this.gunaTileButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton1.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton1.Image")));
-            this.gunaTileButton1.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton1.Location = new System.Drawing.Point(12, 118);
-            this.gunaTileButton1.Name = "gunaTileButton1";
-            this.gunaTileButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton1.OnHoverImage = null;
-            this.gunaTileButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton1.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton1.TabIndex = 24;
-            this.gunaTileButton1.Text = "gunaTileButton1";
-            this.gunaTileButton1.Click += new System.EventHandler(this.tile_Click);
-            // 
-            // gunaTileButton10
-            // 
-            this.gunaTileButton10.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton10.AnimationSpeed = 0.03F;
-            this.gunaTileButton10.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton10.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton10.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton10.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton10.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton10.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton10.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton10.Image")));
-            this.gunaTileButton10.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton10.Location = new System.Drawing.Point(676, 12);
-            this.gunaTileButton10.Name = "gunaTileButton10";
-            this.gunaTileButton10.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton10.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton10.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton10.OnHoverImage = null;
-            this.gunaTileButton10.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton10.Size = new System.Drawing.Size(160, 100);
-            this.gunaTileButton10.TabIndex = 52;
-            this.gunaTileButton10.Text = "gunaTileButton10";
-            this.gunaTileButton10.Click += new System.EventHandler(this.tile_Click);
-            // 
-            // gunaTileButton23
-            // 
-            this.gunaTileButton23.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton23.AnimationSpeed = 0.03F;
-            this.gunaTileButton23.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton23.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton23.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton23.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton23.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton23.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton23.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton23.Image")));
-            this.gunaTileButton23.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton23.Location = new System.Drawing.Point(676, 284);
-            this.gunaTileButton23.Name = "gunaTileButton23";
-            this.gunaTileButton23.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton23.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton23.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton23.OnHoverImage = null;
-            this.gunaTileButton23.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton23.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton23.TabIndex = 45;
-            this.gunaTileButton23.Text = "gunaTileButton23";
-            this.gunaTileButton23.Click += new System.EventHandler(this.tile_Click);
-            // 
-            // gunaTileButton24
-            // 
-            this.gunaTileButton24.AnimationHoverSpeed = 0.07F;
-            this.gunaTileButton24.AnimationSpeed = 0.03F;
-            this.gunaTileButton24.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTileButton24.BorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton24.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaTileButton24.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaTileButton24.Font = new System.Drawing.Font("Segoe UI Light", 15.75F);
-            this.gunaTileButton24.ForeColor = System.Drawing.Color.White;
-            this.gunaTileButton24.Image = ((System.Drawing.Image)(resources.GetObject("gunaTileButton24.Image")));
-            this.gunaTileButton24.ImageSize = new System.Drawing.Size(52, 52);
-            this.gunaTileButton24.Location = new System.Drawing.Point(676, 118);
-            this.gunaTileButton24.Name = "gunaTileButton24";
-            this.gunaTileButton24.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaTileButton24.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaTileButton24.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaTileButton24.OnHoverImage = null;
-            this.gunaTileButton24.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaTileButton24.Size = new System.Drawing.Size(160, 160);
-            this.gunaTileButton24.TabIndex = 44;
-            this.gunaTileButton24.Text = "gunaTileButton24";
-            this.gunaTileButton24.Click += new System.EventHandler(this.tile_Click);
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(745, 360);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(49, 43);
+            this.gunaAdvenceButton1.TabIndex = 3;
             // 
             // Launcher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 775);
-            this.Controls.Add(this.gunaTileButton10);
-            this.Controls.Add(this.gunaTileButton23);
-            this.Controls.Add(this.gunaTileButton24);
-            this.Controls.Add(this.gunaTileButton17);
-            this.Controls.Add(this.gunaTileButton18);
-            this.Controls.Add(this.gunaTileButton19);
-            this.Controls.Add(this.gunaTileButton20);
-            this.Controls.Add(this.gunaTileButton11);
-            this.Controls.Add(this.gunaTileButton12);
-            this.Controls.Add(this.gunaTileButton8);
-            this.Controls.Add(this.gunaTileButton9);
-            this.Controls.Add(this.gunaTileButton5);
-            this.Controls.Add(this.gunaTileButton6);
-            this.Controls.Add(this.gunaTileButton2);
-            this.Controls.Add(this.gunaTileButton1);
+            this.ClientSize = new System.Drawing.Size(864, 485);
+            this.Controls.Add(this.launcherTabs);
+            this.Controls.Add(this.gunaPictureBox1);
+            this.Controls.Add(this.gunaPanel1);
             this.Name = "Launcher";
             this.Text = "Launcher";
+            this.Load += new System.EventHandler(this.Launcher_Load);
+            this.gunaPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
+            this.launcherTabs.ResumeLayout(false);
+            this.playPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton17;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton18;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton19;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton20;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton11;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton12;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton8;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton9;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton5;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton6;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton2;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton1;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton10;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton23;
-        private Guna.UI.WinForms.GunaTileButton gunaTileButton24;
+
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaAdvenceButton rmPatchBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton patchBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton playBtn;
+        private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
+        private System.Windows.Forms.TabControl launcherTabs;
+        private System.Windows.Forms.TabPage playPanel;
+        private System.Windows.Forms.TabPage patchPanel;
+        private System.Windows.Forms.TabPage rmPatchPanel;
+        private Guna.UI.WinForms.GunaAdvenceButton launchGameBtn;
+        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
     }
 }
