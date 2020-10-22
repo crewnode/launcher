@@ -37,10 +37,10 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.launcherTabs = new System.Windows.Forms.TabControl();
             this.playPanel = new System.Windows.Forms.TabPage();
+            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.launchGameBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.patchPanel = new System.Windows.Forms.TabPage();
             this.rmPatchPanel = new System.Windows.Forms.TabPage();
-            this.launchGameBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.launcherTabs.SuspendLayout();
@@ -71,6 +71,7 @@ namespace CrewNodeLauncher.UI.Components
             this.rmPatchBtn.CheckedForeColor = System.Drawing.Color.White;
             this.rmPatchBtn.CheckedImage = null;
             this.rmPatchBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.rmPatchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rmPatchBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.rmPatchBtn.FocusedColor = System.Drawing.Color.Empty;
             this.rmPatchBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -105,6 +106,7 @@ namespace CrewNodeLauncher.UI.Components
             this.patchBtn.CheckedForeColor = System.Drawing.Color.White;
             this.patchBtn.CheckedImage = null;
             this.patchBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.patchBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.patchBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.patchBtn.FocusedColor = System.Drawing.Color.Empty;
             this.patchBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -140,6 +142,7 @@ namespace CrewNodeLauncher.UI.Components
             this.playBtn.CheckedForeColor = System.Drawing.Color.White;
             this.playBtn.CheckedImage = null;
             this.playBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.playBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.playBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.playBtn.FocusedColor = System.Drawing.Color.Empty;
             this.playBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -196,24 +199,35 @@ namespace CrewNodeLauncher.UI.Components
             this.playPanel.Text = "Play";
             this.playPanel.UseVisualStyleBackColor = true;
             // 
-            // patchPanel
+            // gunaAdvenceButton1
             // 
-            this.patchPanel.Location = new System.Drawing.Point(4, 22);
-            this.patchPanel.Name = "patchPanel";
-            this.patchPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.patchPanel.Size = new System.Drawing.Size(856, 367);
-            this.patchPanel.TabIndex = 1;
-            this.patchPanel.Text = "Patch";
-            this.patchPanel.UseVisualStyleBackColor = true;
-            // 
-            // rmPatchPanel
-            // 
-            this.rmPatchPanel.Location = new System.Drawing.Point(4, 22);
-            this.rmPatchPanel.Name = "rmPatchPanel";
-            this.rmPatchPanel.Size = new System.Drawing.Size(856, 367);
-            this.rmPatchPanel.TabIndex = 2;
-            this.rmPatchPanel.Text = "Remove Patch";
-            this.rmPatchPanel.UseVisualStyleBackColor = true;
+            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
+            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
+            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14F);
+            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
+            this.gunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(745, 360);
+            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
+            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaAdvenceButton1.OnHoverImage = null;
+            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaAdvenceButton1.Size = new System.Drawing.Size(49, 43);
+            this.gunaAdvenceButton1.TabIndex = 3;
             // 
             // launchGameBtn
             // 
@@ -245,35 +259,24 @@ namespace CrewNodeLauncher.UI.Components
             this.launchGameBtn.Size = new System.Drawing.Size(49, 43);
             this.launchGameBtn.TabIndex = 2;
             // 
-            // gunaAdvenceButton1
+            // patchPanel
             // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 14F);
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(745, 360);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(49, 43);
-            this.gunaAdvenceButton1.TabIndex = 3;
+            this.patchPanel.Location = new System.Drawing.Point(4, 22);
+            this.patchPanel.Name = "patchPanel";
+            this.patchPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.patchPanel.Size = new System.Drawing.Size(856, 411);
+            this.patchPanel.TabIndex = 1;
+            this.patchPanel.Text = "Patch";
+            this.patchPanel.UseVisualStyleBackColor = true;
+            // 
+            // rmPatchPanel
+            // 
+            this.rmPatchPanel.Location = new System.Drawing.Point(4, 22);
+            this.rmPatchPanel.Name = "rmPatchPanel";
+            this.rmPatchPanel.Size = new System.Drawing.Size(856, 411);
+            this.rmPatchPanel.TabIndex = 2;
+            this.rmPatchPanel.Text = "Remove Patch";
+            this.rmPatchPanel.UseVisualStyleBackColor = true;
             // 
             // Launcher
             // 

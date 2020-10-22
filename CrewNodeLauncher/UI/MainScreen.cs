@@ -5,16 +5,24 @@ using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CrewNodeLauncher
 {
     public partial class MainScreen : Form
     {
-        public MainScreen()
+        public MainScreen(string[] args)
         {
             InitializeComponent();
+            Thread.Sleep(500);
+            if (args.Length > 0)
+            {
+                // TODO: Parse the arguments
+                // Such as "--patch", or "--join <gameid>"
+            }
         }
 
         PanelScrollHelper vScrollHelper;
@@ -25,7 +33,6 @@ namespace CrewNodeLauncher
             this.Activate();
             this.Show();
             this.BringToFront();
-            Startup.CloseForm();
 
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             Guna.UI.Lib.GraphicsHelper.DrawLineShadow(navPanel, Color.Black, 40, 20, VerHorAlign.VerticalRight);
@@ -78,7 +85,7 @@ namespace CrewNodeLauncher
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Hide();
         }
 
         private void minimizeButton_Click(object sender, EventArgs e)
@@ -241,6 +248,11 @@ namespace CrewNodeLauncher
             };
             notYetAdded.Location = new Point((contentPanel.Width - notYetAdded.Width) / 2, (contentPanel.Height - notYetAdded.Height) / 2);
             contentPanel.Controls.Add(notYetAdded);
+        }
+
+        private void MainScreen_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
 
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)

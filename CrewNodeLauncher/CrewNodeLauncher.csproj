@@ -92,6 +92,7 @@
   <ItemGroup>
     <Compile Include="API\API.cs" />
     <Compile Include="Security\SignatureCheck.cs" />
+    <Compile Include="UI\Addons\SystemTray.cs" />
     <Compile Include="UI\Components\Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +133,7 @@
     </Compile>
     <Compile Include="Utils\Configuration.cs" />
     <Compile Include="Utils\Patcher.cs" />
+    <Compile Include="Utils\ProtocolHandler.cs" />
     <Compile Include="Utils\Startup.cs" />
     <Compile Include="Utils\Updater.cs" />
     <EmbeddedResource Include="UI\Components\Launcher.resx">

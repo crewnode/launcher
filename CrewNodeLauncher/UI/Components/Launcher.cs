@@ -36,8 +36,8 @@ namespace CrewNodeLauncher.UI.Components
         private void PanelTab_Click(object sender, EventArgs e)
         {
             GunaAdvenceButton btn = (GunaAdvenceButton)sender;
-            if (btn.Tag == null) return;
-            launcherTabs.TabPages[(string) btn.Tag].Select();
+            if (btn.Tag == null) { MessageBox.Show("no tag"); return; }
+            launcherTabs.SelectTab(launcherTabs.TabPages.IndexOfKey((string)btn.Tag));
 
             // Reset check states
             playBtn.Checked = false;

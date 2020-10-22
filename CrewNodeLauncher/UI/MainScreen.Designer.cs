@@ -105,6 +105,7 @@
             this.updateAvailableBtn.CheckedForeColor = System.Drawing.Color.White;
             this.updateAvailableBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("updateAvailableBtn.CheckedImage")));
             this.updateAvailableBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.updateAvailableBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.updateAvailableBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.updateAvailableBtn.FocusedColor = System.Drawing.Color.Empty;
             this.updateAvailableBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -139,6 +140,7 @@
             this.loginRegisterBtn.CheckedForeColor = System.Drawing.Color.White;
             this.loginRegisterBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("loginRegisterBtn.CheckedImage")));
             this.loginRegisterBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.loginRegisterBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.loginRegisterBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.loginRegisterBtn.FocusedColor = System.Drawing.Color.Empty;
             this.loginRegisterBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -186,6 +188,7 @@
             this.settingsBtn.CheckedForeColor = System.Drawing.Color.White;
             this.settingsBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("settingsBtn.CheckedImage")));
             this.settingsBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.settingsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.settingsBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.settingsBtn.FocusedColor = System.Drawing.Color.Empty;
             this.settingsBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -219,6 +222,7 @@
             this.leaderboardBtn.CheckedForeColor = System.Drawing.Color.White;
             this.leaderboardBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("leaderboardBtn.CheckedImage")));
             this.leaderboardBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.leaderboardBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.leaderboardBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.leaderboardBtn.FocusedColor = System.Drawing.Color.Empty;
             this.leaderboardBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -252,6 +256,7 @@
             this.newsBtn.CheckedForeColor = System.Drawing.Color.White;
             this.newsBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("newsBtn.CheckedImage")));
             this.newsBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.newsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.newsBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.newsBtn.FocusedColor = System.Drawing.Color.Empty;
             this.newsBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -285,6 +290,7 @@
             this.pluginsBtn.CheckedForeColor = System.Drawing.Color.White;
             this.pluginsBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("pluginsBtn.CheckedImage")));
             this.pluginsBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.pluginsBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pluginsBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.pluginsBtn.FocusedColor = System.Drawing.Color.Empty;
             this.pluginsBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -318,6 +324,7 @@
             this.launcherBtn.CheckedForeColor = System.Drawing.Color.White;
             this.launcherBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("launcherBtn.CheckedImage")));
             this.launcherBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.launcherBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.launcherBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.launcherBtn.FocusedColor = System.Drawing.Color.Empty;
             this.launcherBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
@@ -540,6 +547,7 @@
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrewNode";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainScreen_FormClosing);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.navPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cnImage2)).EndInit();

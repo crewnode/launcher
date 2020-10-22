@@ -1,10 +1,13 @@
 ﻿using Semver;
 using System.Diagnostics;
+using System.Net;
 
 namespace CrewNodeLauncher.Utils
 {
     static class Updater
     {
+        private static SemVersion _remoteVersion;
+
         public static bool runUpdate()
         {
             // TODO
@@ -14,7 +17,14 @@ namespace CrewNodeLauncher.Utils
 
         public static SemVersion getRemoteVersion()
         {
-            return new SemVersion(0, 0, 1, "alpha1");
+            if (_remoteVersion != null) return _remoteVersion;
+
+            // Get the latest remote version
+            WebClient client = new WebClient();
+            var version = client.DownloadString("https://crewnode.net/version");
+            SemVersion.TryParse(version, out _remoteVersion);
+            if (_remoteVersion == null) return new SemVersion(0, 0, 0, "unknown", "error");
+            return _remoteVersion;
         }
 
         public static SemVersion getLocalVersion()

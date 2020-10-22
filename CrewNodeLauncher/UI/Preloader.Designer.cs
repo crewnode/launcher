@@ -36,8 +36,6 @@ namespace CrewNodeLauncher.UI
             this.upperPanel = new Guna.UI.WinForms.GunaPanel();
             this.headerPanel = new Guna.UI.WinForms.GunaPanel();
             this.formDragIndicator = new Guna.UI.WinForms.GunaPictureBox();
-            this.exitButton = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.minimizeButton = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaCircleProgressBar1 = new Guna.UI.WinForms.GunaCircleProgressBar();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             ((System.ComponentModel.ISupportInitialize)(this.cnImage2)).BeginInit();
@@ -100,8 +98,6 @@ namespace CrewNodeLauncher.UI
             // 
             this.headerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.headerPanel.Controls.Add(this.formDragIndicator);
-            this.headerPanel.Controls.Add(this.exitButton);
-            this.headerPanel.Controls.Add(this.minimizeButton);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
@@ -115,84 +111,14 @@ namespace CrewNodeLauncher.UI
             // 
             this.formDragIndicator.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("formDragIndicator.BackgroundImage")));
             this.formDragIndicator.BaseColor = System.Drawing.Color.White;
-            this.formDragIndicator.Location = new System.Drawing.Point(15, 13);
+            this.formDragIndicator.Location = new System.Drawing.Point(12, 13);
             this.formDragIndicator.Name = "formDragIndicator";
-            this.formDragIndicator.Size = new System.Drawing.Size(227, 15);
+            this.formDragIndicator.Size = new System.Drawing.Size(285, 15);
             this.formDragIndicator.TabIndex = 0;
             this.formDragIndicator.TabStop = false;
             this.formDragIndicator.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.formDragIndicator.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
             this.formDragIndicator.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
-            // 
-            // exitButton
-            // 
-            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.exitButton.AnimationHoverSpeed = 0.07F;
-            this.exitButton.AnimationSpeed = 0.03F;
-            this.exitButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
-            this.exitButton.BorderColor = System.Drawing.Color.Black;
-            this.exitButton.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.exitButton.CheckedBorderColor = System.Drawing.Color.Black;
-            this.exitButton.CheckedForeColor = System.Drawing.Color.White;
-            this.exitButton.CheckedImage = ((System.Drawing.Image)(resources.GetObject("exitButton.CheckedImage")));
-            this.exitButton.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.exitButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.exitButton.FocusedColor = System.Drawing.Color.Empty;
-            this.exitButton.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.exitButton.ForeColor = System.Drawing.Color.White;
-            this.exitButton.Image = null;
-            this.exitButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.exitButton.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
-            this.exitButton.LineTop = 2;
-            this.exitButton.Location = new System.Drawing.Point(273, 7);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.exitButton.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.exitButton.OnHoverForeColor = System.Drawing.Color.White;
-            this.exitButton.OnHoverImage = null;
-            this.exitButton.OnHoverLineColor = System.Drawing.Color.Red;
-            this.exitButton.OnPressedColor = System.Drawing.Color.Black;
-            this.exitButton.Size = new System.Drawing.Size(30, 26);
-            this.exitButton.TabIndex = 0;
-            this.exitButton.Text = "X";
-            this.exitButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
-            this.exitButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
-            this.exitButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
-            // 
-            // minimizeButton
-            // 
-            this.minimizeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimizeButton.AnimationHoverSpeed = 0.07F;
-            this.minimizeButton.AnimationSpeed = 0.03F;
-            this.minimizeButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
-            this.minimizeButton.BorderColor = System.Drawing.Color.Black;
-            this.minimizeButton.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.minimizeButton.CheckedBorderColor = System.Drawing.Color.Black;
-            this.minimizeButton.CheckedForeColor = System.Drawing.Color.White;
-            this.minimizeButton.CheckedImage = ((System.Drawing.Image)(resources.GetObject("minimizeButton.CheckedImage")));
-            this.minimizeButton.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.minimizeButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.minimizeButton.FocusedColor = System.Drawing.Color.Empty;
-            this.minimizeButton.Font = new System.Drawing.Font("Consolas", 11F, System.Drawing.FontStyle.Bold);
-            this.minimizeButton.ForeColor = System.Drawing.Color.White;
-            this.minimizeButton.Image = null;
-            this.minimizeButton.ImageSize = new System.Drawing.Size(20, 20);
-            this.minimizeButton.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
-            this.minimizeButton.LineTop = 2;
-            this.minimizeButton.Location = new System.Drawing.Point(244, 7);
-            this.minimizeButton.Name = "minimizeButton";
-            this.minimizeButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.minimizeButton.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.minimizeButton.OnHoverForeColor = System.Drawing.Color.White;
-            this.minimizeButton.OnHoverImage = null;
-            this.minimizeButton.OnHoverLineColor = System.Drawing.Color.Red;
-            this.minimizeButton.OnPressedColor = System.Drawing.Color.Black;
-            this.minimizeButton.Size = new System.Drawing.Size(30, 26);
-            this.minimizeButton.TabIndex = 1;
-            this.minimizeButton.Text = "_";
-            this.minimizeButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
-            this.minimizeButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
-            this.minimizeButton.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
             // 
             // gunaCircleProgressBar1
             // 
@@ -232,6 +158,8 @@ namespace CrewNodeLauncher.UI
             this.Controls.Add(this.upperPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Preloader";
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Preloader";
             this.Load += new System.EventHandler(this.Preloader_Load);
@@ -251,9 +179,7 @@ namespace CrewNodeLauncher.UI
         private Guna.UI.WinForms.GunaPanel upperPanel;
         private Guna.UI.WinForms.GunaPanel headerPanel;
         private Guna.UI.WinForms.GunaPictureBox formDragIndicator;
-        private Guna.UI.WinForms.GunaAdvenceButton exitButton;
-        private Guna.UI.WinForms.GunaAdvenceButton minimizeButton;
-        private Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        public Guna.UI.WinForms.GunaLabel gunaLabel1;
+        public Guna.UI.WinForms.GunaCircleProgressBar gunaCircleProgressBar1;
     }
 }
