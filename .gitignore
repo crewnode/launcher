@@ -10,3 +10,6 @@
 # Signing Keys
 */Security/Keys/*.pfx
 */Security/Keys/*.snk
+
+# Packages
+**/packages/**
