@@ -31,6 +31,9 @@ namespace CrewNodeLauncher.UI.Components
 
             // FontAwesome Icons
             confirmKeyBtn.Image = IconChar.Save.ToBitmap(Color.White);
+
+            // Update URLs
+            loginBrowser.Load("https://crewno.de/launcher/login");
         }
 
         private void PanelTab_Click(object sender, EventArgs e)

@@ -371,7 +371,7 @@
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanel.Location = new System.Drawing.Point(246, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(881, 92);
+            this.upperPanel.Size = new System.Drawing.Size(881, 94);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.upperPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -506,9 +506,9 @@
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.Control;
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(246, 92);
+            this.contentPanel.Location = new System.Drawing.Point(246, 94);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(881, 486);
+            this.contentPanel.Size = new System.Drawing.Size(881, 484);
             this.contentPanel.TabIndex = 2;
             this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
             this.contentPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);

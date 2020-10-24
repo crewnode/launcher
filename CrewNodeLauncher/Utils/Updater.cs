@@ -22,9 +22,16 @@ namespace CrewNodeLauncher.Utils
 
             // Get the latest remote version
             WebClient client = new WebClient();
-            var version = client.DownloadString("https://crewnode.net/version");
-            SemVersion.TryParse(version, out _remoteVersion);
-            if (_remoteVersion == null) return (_remoteVersion = new SemVersion(0, 0, 0, "unknown", "error"));
+            try
+            {
+                var version = client.DownloadString("https://crewnode.net/version");
+                SemVersion.TryParse(version, out _remoteVersion);
+                if (_remoteVersion == null) return (_remoteVersion = new SemVersion(0, 0, 0, "unknown", "error"));
+            }
+            catch
+            {
+                _remoteVersion = new SemVersion(0, 0, 0, "unknown", "error");
+            }
             return _remoteVersion;
         }
 

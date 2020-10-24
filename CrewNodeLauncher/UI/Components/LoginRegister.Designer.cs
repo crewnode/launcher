@@ -42,9 +42,11 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.loginPanel = new System.Windows.Forms.TabPage();
             this.registerPanel = new System.Windows.Forms.TabPage();
+            this.loginBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
             this.gunaPanel1.SuspendLayout();
             this.loginRegTabs.SuspendLayout();
             this.keyPanel.SuspendLayout();
+            this.loginPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // loginTabBtn
@@ -68,7 +70,7 @@ namespace CrewNodeLauncher.UI.Components
             this.loginTabBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.loginTabBtn.LineBottom = 2;
             this.loginTabBtn.LineColor = System.Drawing.Color.Transparent;
-            this.loginTabBtn.Location = new System.Drawing.Point(83, 0);
+            this.loginTabBtn.Location = new System.Drawing.Point(12, 0);
             this.loginTabBtn.Name = "loginTabBtn";
             this.loginTabBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.loginTabBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -116,7 +118,7 @@ namespace CrewNodeLauncher.UI.Components
             this.getKeyBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.getKeyBtn.LineBottom = 2;
             this.getKeyBtn.LineColor = System.Drawing.Color.Transparent;
-            this.getKeyBtn.Location = new System.Drawing.Point(12, 0);
+            this.getKeyBtn.Location = new System.Drawing.Point(792, 0);
             this.getKeyBtn.Name = "getKeyBtn";
             this.getKeyBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.getKeyBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -151,7 +153,7 @@ namespace CrewNodeLauncher.UI.Components
             this.registerTabBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.registerTabBtn.LineBottom = 2;
             this.registerTabBtn.LineColor = System.Drawing.Color.Transparent;
-            this.registerTabBtn.Location = new System.Drawing.Point(143, 0);
+            this.registerTabBtn.Location = new System.Drawing.Point(72, 0);
             this.registerTabBtn.Name = "registerTabBtn";
             this.registerTabBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.registerTabBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -266,6 +268,7 @@ namespace CrewNodeLauncher.UI.Components
             // 
             // loginPanel
             // 
+            this.loginPanel.Controls.Add(this.loginBrowser);
             this.loginPanel.Location = new System.Drawing.Point(4, 22);
             this.loginPanel.Name = "loginPanel";
             this.loginPanel.Size = new System.Drawing.Size(855, 408);
@@ -282,6 +285,15 @@ namespace CrewNodeLauncher.UI.Components
             this.registerPanel.Text = "Register";
             this.registerPanel.UseVisualStyleBackColor = true;
             // 
+            // loginBrowser
+            // 
+            this.loginBrowser.ActivateBrowserOnCreation = false;
+            this.loginBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loginBrowser.Location = new System.Drawing.Point(0, 0);
+            this.loginBrowser.Name = "loginBrowser";
+            this.loginBrowser.Size = new System.Drawing.Size(855, 408);
+            this.loginBrowser.TabIndex = 0;
+            // 
             // LoginRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -295,6 +307,7 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaPanel1.ResumeLayout(false);
             this.loginRegTabs.ResumeLayout(false);
             this.keyPanel.ResumeLayout(false);
+            this.loginPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -312,5 +325,6 @@ namespace CrewNodeLauncher.UI.Components
         private System.Windows.Forms.TabPage registerPanel;
         private Guna.UI.WinForms.GunaAdvenceButton confirmKeyBtn;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
+        private CefSharp.WinForms.ChromiumWebBrowser loginBrowser;
     }
 }

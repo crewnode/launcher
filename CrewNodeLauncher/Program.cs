@@ -5,6 +5,9 @@ using System.Threading;
 using CrewNodeLauncher.Properties;
 using Semver;
 using System.Threading.Tasks;
+using CefSharp.WinForms;
+using CefSharp;
+using System.IO;
 
 namespace CrewNodeLauncher
 {
@@ -22,6 +25,13 @@ namespace CrewNodeLauncher
 
             // Register Protocol for "crewnode://"
             // ProtocolHandler.Register();
+
+            // Setup Cef
+            var settings = new CefSettings();
+            settings.BrowserSubprocessPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
+                                               Environment.Is64BitProcess ? "x64" : "x86",
+                                               "CefSharp.BrowserSubprocess.exe");
+            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
 
             // Run application
             var startup = new Startup();
