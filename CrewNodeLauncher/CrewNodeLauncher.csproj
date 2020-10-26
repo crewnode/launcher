@@ -64,7 +64,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Security\Keys\CrewNodeLauncher.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Security\Keys\CrewNodeLauncher-NOPW.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
@@ -78,7 +78,7 @@
       <HintPath>bin\Debug\signed-dlls\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="Guna.UI">
-      <HintPath>..\..\..\..\Downloads\Guna.UI-Framework-Lib-master\Guna UI Activation\Guna UI Activation\bin\Debug\Guna.UI.dll</HintPath>
+      <HintPath>bin\Debug\signed-dlls\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -184,6 +184,8 @@
     <EmbeddedResource Include="UI\Preloader.resx">
       <DependentUpon>Preloader.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="App.manifest" />
+    <None Include="Security\Keys\CrewNodeLauncher-NOPW.snk" />
     <None Include="Security\Keys\CrewNodeLauncher.pfx" />
     <None Include="Security\Keys\CrewNodeLauncher.snk" />
     <None Include="packages.config" />

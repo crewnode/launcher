@@ -1,10 +1,7 @@
 ﻿using CrewNodeLauncher.Utils;
 using System;
 using System.Windows.Forms;
-using System.Threading;
-using CrewNodeLauncher.Properties;
-using Semver;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices;
 using CefSharp.WinForms;
 using CefSharp;
 using System.IO;
@@ -23,14 +20,19 @@ namespace CrewNodeLauncher
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            // Support 4K Monitors
+            SetProcessDpiAwareness((int)DpiAwareness.SystemAware);
+
             // Register Protocol for "crewnode://"
             // ProtocolHandler.Register();
 
             // Setup Cef
-            var settings = new CefSettings();
-            settings.BrowserSubprocessPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
+            var settings = new CefSettings
+            {
+                BrowserSubprocessPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
                                                Environment.Is64BitProcess ? "x64" : "x86",
-                                               "CefSharp.BrowserSubprocess.exe");
+                                               "CefSharp.BrowserSubprocess.exe")
+            };
             Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
 
             // Run application
@@ -46,6 +48,17 @@ namespace CrewNodeLauncher
             // Cleanup
             startup.GetMainThread().Join();
             Environment.Exit(0);
+        }
+
+        [DllImport("Shcore.dll")]
+        static extern int SetProcessDpiAwareness(int PROCESS_DPI_AWARENESS);
+
+        // According to https://msdn.microsoft.com/en-us/library/windows/desktop/dn280512(v=vs.85).aspx
+        private enum DpiAwareness
+        {
+            None = 0,
+            SystemAware = 1,
+            PerMonitorAware = 2
         }
     }
 }
