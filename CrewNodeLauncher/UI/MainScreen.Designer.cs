@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.navPanel = new Guna.UI.WinForms.GunaPanel();
             this.cnImage1 = new Guna.UI.WinForms.GunaImageButton();
@@ -452,6 +451,7 @@
             this.exitButton.Size = new System.Drawing.Size(30, 26);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "X";
+            this.exitButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.exitButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // minimizeButton
@@ -485,6 +485,7 @@
             this.minimizeButton.Size = new System.Drawing.Size(30, 26);
             this.minimizeButton.TabIndex = 1;
             this.minimizeButton.Text = "_";
+            this.minimizeButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.minimizeButton.Click += new System.EventHandler(this.minimizeButton_Click);
             // 
             // gunaVScrollBar1
