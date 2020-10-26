@@ -29,6 +29,7 @@ namespace CrewNodeLauncher.UI.Components
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.SuspendLayout();
             // 

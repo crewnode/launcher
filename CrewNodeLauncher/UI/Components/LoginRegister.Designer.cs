@@ -29,6 +29,7 @@ namespace CrewNodeLauncher.UI.Components
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginRegister));
             this.loginTabBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -41,8 +42,8 @@ namespace CrewNodeLauncher.UI.Components
             this.apiKeyText = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.loginPanel = new System.Windows.Forms.TabPage();
-            this.registerPanel = new System.Windows.Forms.TabPage();
             this.loginBrowser = new CefSharp.WinForms.ChromiumWebBrowser();
+            this.registerPanel = new System.Windows.Forms.TabPage();
             this.gunaPanel1.SuspendLayout();
             this.loginRegTabs.SuspendLayout();
             this.keyPanel.SuspendLayout();
@@ -276,15 +277,6 @@ namespace CrewNodeLauncher.UI.Components
             this.loginPanel.Text = "Login";
             this.loginPanel.UseVisualStyleBackColor = true;
             // 
-            // registerPanel
-            // 
-            this.registerPanel.Location = new System.Drawing.Point(4, 22);
-            this.registerPanel.Name = "registerPanel";
-            this.registerPanel.Size = new System.Drawing.Size(855, 408);
-            this.registerPanel.TabIndex = 2;
-            this.registerPanel.Text = "Register";
-            this.registerPanel.UseVisualStyleBackColor = true;
-            // 
             // loginBrowser
             // 
             this.loginBrowser.ActivateBrowserOnCreation = false;
@@ -293,6 +285,15 @@ namespace CrewNodeLauncher.UI.Components
             this.loginBrowser.Name = "loginBrowser";
             this.loginBrowser.Size = new System.Drawing.Size(855, 408);
             this.loginBrowser.TabIndex = 0;
+            // 
+            // registerPanel
+            // 
+            this.registerPanel.Location = new System.Drawing.Point(4, 22);
+            this.registerPanel.Name = "registerPanel";
+            this.registerPanel.Size = new System.Drawing.Size(855, 408);
+            this.registerPanel.TabIndex = 2;
+            this.registerPanel.Text = "Register";
+            this.registerPanel.UseVisualStyleBackColor = true;
             // 
             // LoginRegister
             // 

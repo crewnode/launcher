@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.navPanel = new Guna.UI.WinForms.GunaPanel();
             this.cnImage1 = new Guna.UI.WinForms.GunaImageButton();

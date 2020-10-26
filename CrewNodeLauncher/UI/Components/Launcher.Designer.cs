@@ -29,6 +29,7 @@ namespace CrewNodeLauncher.UI.Components
         /// </summary>
         private void InitializeComponent()
         {
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.rmPatchBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -264,7 +265,7 @@ namespace CrewNodeLauncher.UI.Components
             this.patchPanel.Location = new System.Drawing.Point(4, 22);
             this.patchPanel.Name = "patchPanel";
             this.patchPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.patchPanel.Size = new System.Drawing.Size(856, 411);
+            this.patchPanel.Size = new System.Drawing.Size(856, 409);
             this.patchPanel.TabIndex = 1;
             this.patchPanel.Text = "Patch";
             this.patchPanel.UseVisualStyleBackColor = true;
@@ -273,7 +274,7 @@ namespace CrewNodeLauncher.UI.Components
             // 
             this.rmPatchPanel.Location = new System.Drawing.Point(4, 22);
             this.rmPatchPanel.Name = "rmPatchPanel";
-            this.rmPatchPanel.Size = new System.Drawing.Size(856, 411);
+            this.rmPatchPanel.Size = new System.Drawing.Size(856, 409);
             this.rmPatchPanel.TabIndex = 2;
             this.rmPatchPanel.Text = "Remove Patch";
             this.rmPatchPanel.UseVisualStyleBackColor = true;

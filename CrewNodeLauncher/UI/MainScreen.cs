@@ -266,6 +266,7 @@ namespace CrewNodeLauncher
            new WindowsPrincipal(WindowsIdentity.GetCurrent())
                .IsInRole(WindowsBuiltInRole.Administrator);
 
+        static List<string> scrollBarResized = new List<string>();
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)
         {
             if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
@@ -275,7 +276,13 @@ namespace CrewNodeLauncher
                 if (!contentPanel.VerticalScroll.Visible)
                 {
                     foreach (Control c in contentPanel.Controls)
-                        c.Width = 880;
+                    {
+                        if (!scrollBarResized.Contains(c.Name))
+                        {
+                            c.Width = c.Width + 33;
+                            scrollBarResized.Add(c.Name);
+                        }
+                    }
                 }
             }
         }
