@@ -6,6 +6,7 @@ using Guna.UI.WinForms;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -72,6 +73,9 @@ namespace CrewNodeLauncher
 
             // Setup navigation handler
             this.setupNavigation();
+
+            // Run workers
+            authenticationWorker.RunWorkerAsync();
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -267,6 +271,44 @@ namespace CrewNodeLauncher
                .IsInRole(WindowsBuiltInRole.Administrator);
 
         static List<string> scrollBarResized = new List<string>();
+
+        private enum authStates {
+            USER_LOGGED_IN,
+            USER_LOGGED_OUT,
+        };
+
+        private void authenticationWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        {
+            BackgroundWorker worker = (BackgroundWorker)sender;
+            while (!worker.CancellationPending)
+            {
+                // We don't want our worker running every interval, so we'll sleep here
+                // NOTE: If any of the below calls require an API request, up this sleep
+                Thread.Sleep(100);
+
+                // Check our status
+                if (API.Authentication.isLoggedIn())
+                    worker.ReportProgress(0, authStates.USER_LOGGED_IN);
+
+                if (API.Authentication.hasLoggedOut())
+                    worker.ReportProgress(0, authStates.USER_LOGGED_OUT);
+            }
+        }
+
+        private void authenticationWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            switch (e.UserState)
+            {
+                case authStates.USER_LOGGED_IN:
+                    loginBtn.Text = API.Authentication.getUsername();
+                    break;
+
+                case authStates.USER_LOGGED_OUT:
+                    loginBtn.Text = "Login";
+                    break;
+            }
+        }
+
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)
         {
             if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();

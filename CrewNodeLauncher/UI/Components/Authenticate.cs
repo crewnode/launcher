@@ -47,7 +47,10 @@ namespace CrewNodeLauncher.UI.Components
             if (btn.Tag == null) return;
 
             // Check if we're clicking an authenticated tab
-            if (authedTabs.Contains((string)btn.Tag) && !API.Authentication.isAuthenticated)
+            if (authedTabs.Contains((string)btn.Tag) && !API.Authentication.isLoggedIn())
+                return;
+            // Or logged in already, but attempting to authorise again
+            else if (!authedTabs.Contains((string)btn.Tag) && API.Authentication.isLoggedIn())
                 return;
 
             // Select our new tab from the selected button tag
@@ -63,8 +66,7 @@ namespace CrewNodeLauncher.UI.Components
         private void loginWithDiscordBtn_Click(object sender, EventArgs e)
         {
             // Generate a UUID
-            string clientLauncherId = Guid.NewGuid().ToString();
-            Process.Start("https://crewno.de/api/launcher/auth/" + clientLauncherId);
+            Process.Start("https://crewno.de/api/launcher/auth/" + API.Authentication.clientLauncherId);
 
             // Start a timer for status checks
             // TODO: Use a BackgroundWorker instead of a shitty timer
@@ -80,9 +82,21 @@ namespace CrewNodeLauncher.UI.Components
         private void statusCheck_Tick(object sender, EventArgs e)
         {
             // Every 10th second, perform a status check
-            if (timeRunning % 10 == 0)
+            if (timeRunning % 5 == 0)
             {
                 // TODO: Status check!
+                if (API.Authentication.getStatusReport() || timeRunning >= 5)
+                {
+                    // Stop the timer from running to avoid it running forever
+                    statusCheck.Stop();
+
+                    // UI Update
+                    authBtn.Checked = false;
+                    dashboardBtn.Checked = true;
+                    authTabs.SelectTab(authTabs.TabPages.IndexOfKey("dashPanel"));
+                    usernameLabel.Text = API.Authentication.getUsername();
+                    return;
+                }
             }
 
             // Check if we have gone below our timeout
@@ -102,6 +116,22 @@ namespace CrewNodeLauncher.UI.Components
             // Update UI
             timeRunning++;
             authTimerLabel.Text = timeLeft + " remaining for authentication";
+        }
+
+        private void logoutBtn_Click(object sender, EventArgs e)
+        {
+            // Log the user out
+            if (!API.Authentication.logoutUser()) return;
+
+            // Update UI
+            authBtn.Checked = true;
+            dashboardBtn.Checked = false;
+            settingsBtn.Checked = false;
+            loginWithDiscordBtn.Visible = true;
+            authTimerLabel.Visible = false;
+            authTimerLabel.Text = "05:00 remaining for authentication";
+            authTabs.SelectTab(authTabs.TabPages.IndexOfKey("authPanel"));
+            timeRunning = 0;
         }
     }
 }

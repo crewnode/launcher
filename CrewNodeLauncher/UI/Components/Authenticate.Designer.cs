@@ -31,35 +31,39 @@ namespace CrewNodeLauncher.UI.Components
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Authenticate));
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.authHeaderPanel = new Guna.UI.WinForms.GunaPanel();
             this.settingsBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.dashboardBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.authBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.authTabs = new System.Windows.Forms.TabControl();
             this.authPanel = new System.Windows.Forms.TabPage();
             this.loginWithDiscordBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
+            this.authTimerLabel = new Guna.UI.WinForms.GunaLabel();
+            this.authHelperLabel = new Guna.UI.WinForms.GunaLabel();
             this.dashPanel = new System.Windows.Forms.TabPage();
+            this.usernameLabel = new Guna.UI.WinForms.GunaLabel();
+            this.welcomeLabel = new Guna.UI.WinForms.GunaLabel();
             this.accountPanel = new System.Windows.Forms.TabPage();
             this.statusCheck = new System.Windows.Forms.Timer(this.components);
-            this.authTimerLabel = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPanel1.SuspendLayout();
+            this.logoutBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.authHeaderPanel.SuspendLayout();
             this.authTabs.SuspendLayout();
             this.authPanel.SuspendLayout();
+            this.dashPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gunaPanel1
+            // authHeaderPanel
             // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.gunaPanel1.Controls.Add(this.settingsBtn);
-            this.gunaPanel1.Controls.Add(this.dashboardBtn);
-            this.gunaPanel1.Controls.Add(this.authBtn);
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(6);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1726, 92);
-            this.gunaPanel1.TabIndex = 3;
+            this.authHeaderPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.authHeaderPanel.Controls.Add(this.settingsBtn);
+            this.authHeaderPanel.Controls.Add(this.dashboardBtn);
+            this.authHeaderPanel.Controls.Add(this.authBtn);
+            this.authHeaderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.authHeaderPanel.Location = new System.Drawing.Point(0, 0);
+            this.authHeaderPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.authHeaderPanel.Name = "authHeaderPanel";
+            this.authHeaderPanel.Size = new System.Drawing.Size(1726, 92);
+            this.authHeaderPanel.TabIndex = 3;
             // 
             // settingsBtn
             // 
@@ -187,7 +191,7 @@ namespace CrewNodeLauncher.UI.Components
             // 
             this.authPanel.Controls.Add(this.loginWithDiscordBtn);
             this.authPanel.Controls.Add(this.authTimerLabel);
-            this.authPanel.Controls.Add(this.gunaLabel1);
+            this.authPanel.Controls.Add(this.authHelperLabel);
             this.authPanel.Location = new System.Drawing.Point(8, 39);
             this.authPanel.Margin = new System.Windows.Forms.Padding(6);
             this.authPanel.Name = "authPanel";
@@ -233,21 +237,36 @@ namespace CrewNodeLauncher.UI.Components
             this.loginWithDiscordBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.loginWithDiscordBtn.Click += new System.EventHandler(this.loginWithDiscordBtn_Click);
             // 
-            // gunaLabel1
+            // authTimerLabel
             // 
-            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaLabel1.Location = new System.Drawing.Point(336, 302);
-            this.gunaLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(1038, 94);
-            this.gunaLabel1.TabIndex = 4;
-            this.gunaLabel1.Text = "In order to authenticate the launcher, you must authenticate your Discord account" +
+            this.authTimerLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.authTimerLabel.Location = new System.Drawing.Point(336, 402);
+            this.authTimerLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.authTimerLabel.Name = "authTimerLabel";
+            this.authTimerLabel.Size = new System.Drawing.Size(1038, 85);
+            this.authTimerLabel.TabIndex = 7;
+            this.authTimerLabel.Text = "05:00 remaining for authentication";
+            this.authTimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.authTimerLabel.Visible = false;
+            // 
+            // authHelperLabel
+            // 
+            this.authHelperLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.authHelperLabel.Location = new System.Drawing.Point(336, 302);
+            this.authHelperLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.authHelperLabel.Name = "authHelperLabel";
+            this.authHelperLabel.Size = new System.Drawing.Size(1038, 94);
+            this.authHelperLabel.TabIndex = 4;
+            this.authHelperLabel.Text = "In order to authenticate the launcher, you must authenticate your Discord account" +
     ".\r\nYou can start the process of logging into CrewNode by clicking the button bel" +
     "ow.";
-            this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.authHelperLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dashPanel
             // 
+            this.dashPanel.Controls.Add(this.logoutBtn);
+            this.dashPanel.Controls.Add(this.usernameLabel);
+            this.dashPanel.Controls.Add(this.welcomeLabel);
             this.dashPanel.Location = new System.Drawing.Point(8, 39);
             this.dashPanel.Margin = new System.Windows.Forms.Padding(6);
             this.dashPanel.Name = "dashPanel";
@@ -255,6 +274,30 @@ namespace CrewNodeLauncher.UI.Components
             this.dashPanel.TabIndex = 1;
             this.dashPanel.Text = "Dashboard";
             this.dashPanel.UseVisualStyleBackColor = true;
+            // 
+            // usernameLabel
+            // 
+            this.usernameLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.usernameLabel.ForeColor = System.Drawing.Color.Black;
+            this.usernameLabel.Location = new System.Drawing.Point(217, 15);
+            this.usernameLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.usernameLabel.Name = "usernameLabel";
+            this.usernameLabel.Size = new System.Drawing.Size(1472, 59);
+            this.usernameLabel.TabIndex = 5;
+            this.usernameLabel.Text = "username";
+            this.usernameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // welcomeLabel
+            // 
+            this.welcomeLabel.Font = new System.Drawing.Font("Segoe UI", 16F);
+            this.welcomeLabel.ForeColor = System.Drawing.Color.Black;
+            this.welcomeLabel.Location = new System.Drawing.Point(17, 15);
+            this.welcomeLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.welcomeLabel.Name = "welcomeLabel";
+            this.welcomeLabel.Size = new System.Drawing.Size(210, 59);
+            this.welcomeLabel.TabIndex = 4;
+            this.welcomeLabel.Text = "Welcome,";
+            this.welcomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // accountPanel
             // 
@@ -271,41 +314,66 @@ namespace CrewNodeLauncher.UI.Components
             this.statusCheck.Interval = 1000;
             this.statusCheck.Tick += new System.EventHandler(this.statusCheck_Tick);
             // 
-            // authTimerLabel
+            // logoutBtn
             // 
-            this.authTimerLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.authTimerLabel.Location = new System.Drawing.Point(336, 402);
-            this.authTimerLabel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.authTimerLabel.Name = "authTimerLabel";
-            this.authTimerLabel.Size = new System.Drawing.Size(1038, 85);
-            this.authTimerLabel.TabIndex = 7;
-            this.authTimerLabel.Text = "05:00 remaining for authentication";
-            this.authTimerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.authTimerLabel.Visible = false;
+            this.logoutBtn.AnimationHoverSpeed = 0.07F;
+            this.logoutBtn.AnimationSpeed = 0.03F;
+            this.logoutBtn.BackColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.BorderColor = System.Drawing.Color.Black;
+            this.logoutBtn.CheckedBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.logoutBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.logoutBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.logoutBtn.CheckedImage = null;
+            this.logoutBtn.CheckedLineColor = System.Drawing.Color.Red;
+            this.logoutBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.logoutBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.logoutBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.logoutBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.logoutBtn.ForeColor = System.Drawing.Color.Gray;
+            this.logoutBtn.Image = null;
+            this.logoutBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.logoutBtn.LineBottom = 2;
+            this.logoutBtn.LineColor = System.Drawing.Color.Transparent;
+            this.logoutBtn.Location = new System.Drawing.Point(1529, 689);
+            this.logoutBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
+            this.logoutBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.logoutBtn.OnHoverForeColor = System.Drawing.Color.LightGray;
+            this.logoutBtn.OnHoverImage = null;
+            this.logoutBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.logoutBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.logoutBtn.Size = new System.Drawing.Size(174, 92);
+            this.logoutBtn.TabIndex = 6;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // Authenticate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1726, 929);
-            this.Controls.Add(this.gunaPanel1);
+            this.Controls.Add(this.authHeaderPanel);
             this.Controls.Add(this.authTabs);
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "Authenticate";
             this.Text = "Authenticate";
             this.Load += new System.EventHandler(this.Authenticate_Load);
-            this.gunaPanel1.ResumeLayout(false);
+            this.authHeaderPanel.ResumeLayout(false);
             this.authTabs.ResumeLayout(false);
             this.authPanel.ResumeLayout(false);
+            this.dashPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaPanel authHeaderPanel;
         private System.Windows.Forms.TabControl authTabs;
         private System.Windows.Forms.TabPage authPanel;
-        private Guna.UI.WinForms.GunaLabel gunaLabel1;
+        private Guna.UI.WinForms.GunaLabel authHelperLabel;
         private Guna.UI.WinForms.GunaAdvenceButton authBtn;
         private System.Windows.Forms.TabPage dashPanel;
         private System.Windows.Forms.TabPage accountPanel;
@@ -314,5 +382,8 @@ namespace CrewNodeLauncher.UI.Components
         private Guna.UI.WinForms.GunaAdvenceButton dashboardBtn;
         private System.Windows.Forms.Timer statusCheck;
         private Guna.UI.WinForms.GunaLabel authTimerLabel;
+        private Guna.UI.WinForms.GunaLabel usernameLabel;
+        private Guna.UI.WinForms.GunaLabel welcomeLabel;
+        private Guna.UI.WinForms.GunaAdvenceButton logoutBtn;
     }
 }
