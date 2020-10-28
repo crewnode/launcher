@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CrewNodeLauncher.API
 {
-    class API
+    static class Authentication
     {
+        public static bool isAuthenticated { get; } = false;
     }
 }

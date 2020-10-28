@@ -51,7 +51,7 @@ namespace CrewNodeLauncher
             leaderboardBtn.Image = IconChar.ChartBar.ToBitmap(Color.White);
             newsBtn.Image = IconChar.Newspaper.ToBitmap(Color.White);
             settingsBtn.Image = IconChar.Cogs.ToBitmap(Color.White);
-            loginRegisterBtn.Image = IconChar.User.ToBitmap(Color.White);
+            loginBtn.Image = IconChar.User.ToBitmap(Color.White);
             updateAvailableBtn.Image = IconChar.Download.ToBitmap(Color.White);
 
             // Get version
@@ -61,7 +61,7 @@ namespace CrewNodeLauncher
             if (Updater.isUpdateAvailable())
             {
                 updateAvailableBtn.Visible = true;
-                loginRegisterBtn.Location = new Point(loginRegisterBtn.Location.X, loginRegisterBtn.Location.Y - updateAvailableBtn.Height);
+                loginBtn.Location = new Point(loginBtn.Location.X, loginBtn.Location.Y - updateAvailableBtn.Height);
             }
 
             // Setup content panel
@@ -129,7 +129,7 @@ namespace CrewNodeLauncher
             {
                 launcherBtn,
                 pluginsBtn,
-                loginRegisterBtn,
+                loginBtn,
                 leaderboardBtn,
                 newsBtn,
                 settingsBtn
@@ -139,7 +139,7 @@ namespace CrewNodeLauncher
             {
                 new UI.Components.Launcher(),
                 new UI.Components.Plugins(),
-                new UI.Components.LoginRegister()
+                new UI.Components.Authenticate()
             };
 
             int i = 0;
