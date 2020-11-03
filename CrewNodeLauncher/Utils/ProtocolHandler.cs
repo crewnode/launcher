@@ -6,7 +6,7 @@ namespace CrewNodeLauncher.Utils
 {
     internal static class ProtocolHandler
     {
-        private const string _Protocol = "crewnode";
+        private const string _Protocol = RegistryUtil.Protocol;
         private const string _ProtocolHandler = "url.crewnode";
 
         private static readonly string _launch = string.Format(

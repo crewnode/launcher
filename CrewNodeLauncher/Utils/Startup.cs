@@ -8,6 +8,7 @@ using CrewNodeLauncher.UI.Addons;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Windows.Forms;
+using CrewNodeLauncher.API;
 
 namespace CrewNodeLauncher.Utils
 {
@@ -65,6 +66,15 @@ namespace CrewNodeLauncher.Utils
             SetLoaderText("Getting latest launcher information");
             Updater.getRemoteVersion();
             Thread.Sleep(1000);
+            return this;
+        }
+
+        public Startup InitialiseAuthentication()
+        {
+            SetLoaderText("Verifying launcher");
+            RegistryUtil.GetClientLauncherId();
+            Authentication.getStatusReport();
+            Thread.Sleep(2500);
             return this;
         }
 

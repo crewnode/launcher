@@ -1,22 +1,48 @@
-﻿using System;
+﻿using CrewNodeLauncher.API.Models;
+using CrewNodeLauncher.Utils;
+using Microsoft.Win32;
+using System;
+using System.Net;
+using System.Windows.Forms;
 
 namespace CrewNodeLauncher.API
 {
-    static class Authentication
+    class Authentication : Base
     {
         public static string clientLauncherId = Guid.NewGuid().ToString();
         private static bool isAuthenticated = false;
         private static bool userForcedLogout = false;
+        private static bool userNeedsReauthentication = false;
+        private static Base b = new Base();
+        private static UserAuth user;
 
         public static bool getStatusReport()
         {
-            bool isLoggedIn = true;
-            // TODO: Get response from /api/launcher/status/{clientLauncherId}
-            // TODO: (If logged in) Emit some kind of global event, so that the MainScreen GUI can update...?
+            bool isLoggedIn = false;
+            dynamic currentStatus = b.queryApi($"/status/{clientLauncherId}");
+            if (currentStatus.GetCode() == ((int)HttpStatusCode.OK))
+            {
+                isLoggedIn = true;
+                user = currentStatus.ToUserAuth();
+            }
+            else if (currentStatus.GetCode() == ((int)HttpStatusCode.Forbidden))
+                Authentication.requireReauth(true);
 
             // Update status and report back
             isAuthenticated = isLoggedIn;
             return isLoggedIn;
+        }
+
+        public static bool requireReauth(bool update = false)
+        {
+            if (!userNeedsReauthentication && update)
+            {
+                userNeedsReauthentication = true;
+                RegistryUtil.GetClientLauncherId(true);
+                Authentication.logoutUser();
+                return true;
+            }
+            return userNeedsReauthentication;
         }
 
         public static bool isLoggedIn()
@@ -27,8 +53,7 @@ namespace CrewNodeLauncher.API
         public static string getUsername()
         {
             if (!isAuthenticated) return null;
-            // TODO: Get username
-            return "Simple";
+            return $"{user.discord.username}#{user.discord.discriminator}";
         }
 
         public static bool logoutUser()

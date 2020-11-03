@@ -64,7 +64,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Security\Keys\CrewNodeLauncher-NOPW.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>Security\Keys\CrewNodeLauncher.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <DelaySign>false</DelaySign>
@@ -102,6 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="API\Authentication.cs" />
+    <Compile Include="API\Base.cs" />
+    <Compile Include="API\Models\Error.cs" />
+    <Compile Include="API\Models\UserAuth.cs" />
     <Compile Include="Security\SignatureCheck.cs" />
     <Compile Include="UI\Addons\SystemTray.cs" />
     <Compile Include="UI\Components\Launcher.cs">
@@ -151,6 +154,7 @@
     <Compile Include="Utils\Configuration.cs" />
     <Compile Include="Utils\Patcher.cs" />
     <Compile Include="Utils\ProtocolHandler.cs" />
+    <Compile Include="Utils\Registry.cs" />
     <Compile Include="Utils\Startup.cs" />
     <Compile Include="Utils\Updater.cs" />
     <EmbeddedResource Include="UI\Components\Launcher.resx">

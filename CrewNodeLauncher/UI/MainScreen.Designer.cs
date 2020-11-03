@@ -72,9 +72,8 @@
             this.navPanel.Controls.Add(this.cnImage2);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
-            this.navPanel.Margin = new System.Windows.Forms.Padding(6);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(492, 1112);
+            this.navPanel.Size = new System.Drawing.Size(246, 572);
             this.navPanel.TabIndex = 0;
             this.navPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.navPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -86,12 +85,11 @@
             this.cnImage1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cnImage1.Image = global::CrewNodeLauncher.Properties.Resources.crewnode;
             this.cnImage1.ImageSize = new System.Drawing.Size(64, 64);
-            this.cnImage1.Location = new System.Drawing.Point(26, 27);
-            this.cnImage1.Margin = new System.Windows.Forms.Padding(6);
+            this.cnImage1.Location = new System.Drawing.Point(13, 14);
             this.cnImage1.Name = "cnImage1";
             this.cnImage1.OnHoverImage = null;
             this.cnImage1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.cnImage1.Size = new System.Drawing.Size(112, 148);
+            this.cnImage1.Size = new System.Drawing.Size(56, 77);
             this.cnImage1.TabIndex = 5;
             this.cnImage1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.cnImage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -118,8 +116,7 @@
             this.updateAvailableBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.updateAvailableBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.updateAvailableBtn.LineTop = 2;
-            this.updateAvailableBtn.Location = new System.Drawing.Point(0, 1033);
-            this.updateAvailableBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.updateAvailableBtn.Location = new System.Drawing.Point(0, 537);
             this.updateAvailableBtn.Name = "updateAvailableBtn";
             this.updateAvailableBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.updateAvailableBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -127,7 +124,7 @@
             this.updateAvailableBtn.OnHoverImage = null;
             this.updateAvailableBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.updateAvailableBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.updateAvailableBtn.Size = new System.Drawing.Size(494, 77);
+            this.updateAvailableBtn.Size = new System.Drawing.Size(247, 40);
             this.updateAvailableBtn.TabIndex = 9;
             this.updateAvailableBtn.Text = "An update is available!";
             this.updateAvailableBtn.Visible = false;
@@ -154,8 +151,7 @@
             this.loginBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.loginBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.loginBtn.LineTop = 2;
-            this.loginBtn.Location = new System.Drawing.Point(0, 996);
-            this.loginBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.loginBtn.Location = new System.Drawing.Point(0, 518);
             this.loginBtn.Name = "loginBtn";
             this.loginBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.loginBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -163,7 +159,7 @@
             this.loginBtn.OnHoverImage = null;
             this.loginBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.loginBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.loginBtn.Size = new System.Drawing.Size(494, 113);
+            this.loginBtn.Size = new System.Drawing.Size(247, 59);
             this.loginBtn.TabIndex = 8;
             this.loginBtn.Text = "Login";
             this.loginBtn.Click += new System.EventHandler(this.loginRegisterBtn_Click);
@@ -173,10 +169,9 @@
             this.cnLauncherVersion.BackColor = System.Drawing.Color.Transparent;
             this.cnLauncherVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.cnLauncherVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(89)))), ((int)(((byte)(96)))));
-            this.cnLauncherVersion.Location = new System.Drawing.Point(304, 144);
-            this.cnLauncherVersion.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.cnLauncherVersion.Location = new System.Drawing.Point(152, 75);
             this.cnLauncherVersion.Name = "cnLauncherVersion";
-            this.cnLauncherVersion.Size = new System.Drawing.Size(180, 29);
+            this.cnLauncherVersion.Size = new System.Drawing.Size(90, 15);
             this.cnLauncherVersion.TabIndex = 7;
             this.cnLauncherVersion.Text = "v0.0.1-alpha0";
             this.cnLauncherVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -205,8 +200,7 @@
             this.settingsBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.settingsBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.settingsBtn.LineTop = 2;
-            this.settingsBtn.Location = new System.Drawing.Point(0, 631);
-            this.settingsBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.settingsBtn.Location = new System.Drawing.Point(0, 328);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.settingsBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -214,7 +208,7 @@
             this.settingsBtn.OnHoverImage = null;
             this.settingsBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.settingsBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.settingsBtn.Size = new System.Drawing.Size(494, 113);
+            this.settingsBtn.Size = new System.Drawing.Size(247, 59);
             this.settingsBtn.TabIndex = 4;
             this.settingsBtn.Text = "Settings";
             this.settingsBtn.Click += new System.EventHandler(this.settingsBtn_Click);
@@ -240,8 +234,7 @@
             this.leaderboardBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.leaderboardBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.leaderboardBtn.LineTop = 2;
-            this.leaderboardBtn.Location = new System.Drawing.Point(0, 404);
-            this.leaderboardBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.leaderboardBtn.Location = new System.Drawing.Point(0, 210);
             this.leaderboardBtn.Name = "leaderboardBtn";
             this.leaderboardBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.leaderboardBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -249,7 +242,7 @@
             this.leaderboardBtn.OnHoverImage = null;
             this.leaderboardBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.leaderboardBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.leaderboardBtn.Size = new System.Drawing.Size(494, 113);
+            this.leaderboardBtn.Size = new System.Drawing.Size(247, 59);
             this.leaderboardBtn.TabIndex = 3;
             this.leaderboardBtn.Text = "Leaderboard";
             this.leaderboardBtn.Click += new System.EventHandler(this.leaderboardBtn_Click);
@@ -275,8 +268,7 @@
             this.newsBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.newsBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.newsBtn.LineTop = 2;
-            this.newsBtn.Location = new System.Drawing.Point(0, 517);
-            this.newsBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.newsBtn.Location = new System.Drawing.Point(0, 269);
             this.newsBtn.Name = "newsBtn";
             this.newsBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.newsBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -284,7 +276,7 @@
             this.newsBtn.OnHoverImage = null;
             this.newsBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.newsBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.newsBtn.Size = new System.Drawing.Size(494, 113);
+            this.newsBtn.Size = new System.Drawing.Size(247, 59);
             this.newsBtn.TabIndex = 2;
             this.newsBtn.Text = "Announcements";
             this.newsBtn.Click += new System.EventHandler(this.newsBtn_Click);
@@ -310,8 +302,7 @@
             this.pluginsBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.pluginsBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.pluginsBtn.LineTop = 2;
-            this.pluginsBtn.Location = new System.Drawing.Point(0, 290);
-            this.pluginsBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.pluginsBtn.Location = new System.Drawing.Point(0, 151);
             this.pluginsBtn.Name = "pluginsBtn";
             this.pluginsBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.pluginsBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -319,7 +310,7 @@
             this.pluginsBtn.OnHoverImage = null;
             this.pluginsBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.pluginsBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.pluginsBtn.Size = new System.Drawing.Size(494, 113);
+            this.pluginsBtn.Size = new System.Drawing.Size(247, 59);
             this.pluginsBtn.TabIndex = 1;
             this.pluginsBtn.Text = "Plugins";
             this.pluginsBtn.Click += new System.EventHandler(this.pluginsBtn_Click);
@@ -345,8 +336,7 @@
             this.launcherBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.launcherBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.launcherBtn.LineTop = 2;
-            this.launcherBtn.Location = new System.Drawing.Point(0, 177);
-            this.launcherBtn.Margin = new System.Windows.Forms.Padding(6);
+            this.launcherBtn.Location = new System.Drawing.Point(0, 92);
             this.launcherBtn.Name = "launcherBtn";
             this.launcherBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.launcherBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -354,7 +344,7 @@
             this.launcherBtn.OnHoverImage = null;
             this.launcherBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.launcherBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.launcherBtn.Size = new System.Drawing.Size(494, 113);
+            this.launcherBtn.Size = new System.Drawing.Size(247, 59);
             this.launcherBtn.TabIndex = 0;
             this.launcherBtn.Text = "Launcher";
             this.launcherBtn.Click += new System.EventHandler(this.launcherBtn_Click);
@@ -365,10 +355,9 @@
             this.cnImage2.BackgroundImage = global::CrewNodeLauncher.Properties.Resources.crewnode_text;
             this.cnImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.cnImage2.BaseColor = System.Drawing.Color.White;
-            this.cnImage2.Location = new System.Drawing.Point(126, 42);
-            this.cnImage2.Margin = new System.Windows.Forms.Padding(6);
+            this.cnImage2.Location = new System.Drawing.Point(63, 22);
             this.cnImage2.Name = "cnImage2";
-            this.cnImage2.Size = new System.Drawing.Size(328, 112);
+            this.cnImage2.Size = new System.Drawing.Size(164, 58);
             this.cnImage2.TabIndex = 0;
             this.cnImage2.TabStop = false;
             this.cnImage2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
@@ -381,10 +370,9 @@
             this.upperPanel.Controls.Add(this.innerFormName);
             this.upperPanel.Controls.Add(this.headerPanel);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.upperPanel.Location = new System.Drawing.Point(492, 0);
-            this.upperPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.upperPanel.Location = new System.Drawing.Point(246, 0);
             this.upperPanel.Name = "upperPanel";
-            this.upperPanel.Size = new System.Drawing.Size(1762, 181);
+            this.upperPanel.Size = new System.Drawing.Size(881, 94);
             this.upperPanel.TabIndex = 1;
             this.upperPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.upperPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -395,10 +383,9 @@
             this.innerFormName.AutoSize = true;
             this.innerFormName.Font = new System.Drawing.Font("Segoe UI", 16F);
             this.innerFormName.ForeColor = System.Drawing.Color.White;
-            this.innerFormName.Location = new System.Drawing.Point(20, 96);
-            this.innerFormName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.innerFormName.Location = new System.Drawing.Point(10, 50);
             this.innerFormName.Name = "innerFormName";
-            this.innerFormName.Size = new System.Drawing.Size(196, 59);
+            this.innerFormName.Size = new System.Drawing.Size(100, 30);
             this.innerFormName.TabIndex = 3;
             this.innerFormName.Text = "Launcher";
             this.innerFormName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -414,9 +401,8 @@
             this.headerPanel.Controls.Add(this.minimizeButton);
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
-            this.headerPanel.Margin = new System.Windows.Forms.Padding(6);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1762, 75);
+            this.headerPanel.Size = new System.Drawing.Size(881, 39);
             this.headerPanel.TabIndex = 2;
             this.headerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -426,10 +412,9 @@
             // 
             this.formDragIndicator.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("formDragIndicator.BackgroundImage")));
             this.formDragIndicator.BaseColor = System.Drawing.Color.White;
-            this.formDragIndicator.Location = new System.Drawing.Point(30, 25);
-            this.formDragIndicator.Margin = new System.Windows.Forms.Padding(6);
+            this.formDragIndicator.Location = new System.Drawing.Point(15, 13);
             this.formDragIndicator.Name = "formDragIndicator";
-            this.formDragIndicator.Size = new System.Drawing.Size(1580, 29);
+            this.formDragIndicator.Size = new System.Drawing.Size(790, 15);
             this.formDragIndicator.TabIndex = 0;
             this.formDragIndicator.TabStop = false;
             this.formDragIndicator.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
@@ -456,8 +441,7 @@
             this.exitButton.ImageSize = new System.Drawing.Size(20, 20);
             this.exitButton.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.exitButton.LineTop = 2;
-            this.exitButton.Location = new System.Drawing.Point(1690, 13);
-            this.exitButton.Margin = new System.Windows.Forms.Padding(6);
+            this.exitButton.Location = new System.Drawing.Point(845, 7);
             this.exitButton.Name = "exitButton";
             this.exitButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
             this.exitButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -465,7 +449,7 @@
             this.exitButton.OnHoverImage = null;
             this.exitButton.OnHoverLineColor = System.Drawing.Color.Red;
             this.exitButton.OnPressedColor = System.Drawing.Color.Black;
-            this.exitButton.Size = new System.Drawing.Size(60, 50);
+            this.exitButton.Size = new System.Drawing.Size(30, 26);
             this.exitButton.TabIndex = 0;
             this.exitButton.Text = "X";
             this.exitButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -491,8 +475,7 @@
             this.minimizeButton.ImageSize = new System.Drawing.Size(20, 20);
             this.minimizeButton.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.minimizeButton.LineTop = 2;
-            this.minimizeButton.Location = new System.Drawing.Point(1632, 13);
-            this.minimizeButton.Margin = new System.Windows.Forms.Padding(6);
+            this.minimizeButton.Location = new System.Drawing.Point(816, 7);
             this.minimizeButton.Name = "minimizeButton";
             this.minimizeButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
             this.minimizeButton.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -500,7 +483,7 @@
             this.minimizeButton.OnHoverImage = null;
             this.minimizeButton.OnHoverLineColor = System.Drawing.Color.Red;
             this.minimizeButton.OnPressedColor = System.Drawing.Color.Black;
-            this.minimizeButton.Size = new System.Drawing.Size(60, 50);
+            this.minimizeButton.Size = new System.Drawing.Size(30, 26);
             this.minimizeButton.TabIndex = 1;
             this.minimizeButton.Text = "_";
             this.minimizeButton.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -512,12 +495,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaVScrollBar1.BackColor = System.Drawing.Color.Transparent;
             this.gunaVScrollBar1.LargeChange = 10;
-            this.gunaVScrollBar1.Location = new System.Drawing.Point(2222, 200);
-            this.gunaVScrollBar1.Margin = new System.Windows.Forms.Padding(6);
+            this.gunaVScrollBar1.Location = new System.Drawing.Point(1111, 104);
             this.gunaVScrollBar1.Maximum = 100;
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(101)))), ((int)(((byte)(122)))));
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(20, 888);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 462);
             this.gunaVScrollBar1.TabIndex = 1;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
@@ -527,10 +509,9 @@
             // 
             this.contentPanel.BackColor = System.Drawing.SystemColors.Control;
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contentPanel.Location = new System.Drawing.Point(492, 181);
-            this.contentPanel.Margin = new System.Windows.Forms.Padding(6);
+            this.contentPanel.Location = new System.Drawing.Point(246, 94);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(1762, 931);
+            this.contentPanel.Size = new System.Drawing.Size(881, 478);
             this.contentPanel.TabIndex = 2;
             this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
             this.contentPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
@@ -542,12 +523,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaHScrollBar1.BackColor = System.Drawing.Color.Transparent;
             this.gunaHScrollBar1.LargeChange = 10;
-            this.gunaHScrollBar1.Location = new System.Drawing.Point(510, 1069);
-            this.gunaHScrollBar1.Margin = new System.Windows.Forms.Padding(100, 6, 100, 6);
+            this.gunaHScrollBar1.Location = new System.Drawing.Point(255, 556);
+            this.gunaHScrollBar1.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.gunaHScrollBar1.Maximum = 100;
             this.gunaHScrollBar1.Name = "gunaHScrollBar1";
             this.gunaHScrollBar1.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(101)))), ((int)(((byte)(122)))));
-            this.gunaHScrollBar1.Size = new System.Drawing.Size(1686, 19);
+            this.gunaHScrollBar1.Size = new System.Drawing.Size(843, 10);
             this.gunaHScrollBar1.TabIndex = 3;
             this.gunaHScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.gunaHScrollBar1.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
@@ -562,10 +543,10 @@
             // 
             // MainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(2254, 1112);
+            this.ClientSize = new System.Drawing.Size(1127, 572);
             this.Controls.Add(this.gunaHScrollBar1);
             this.Controls.Add(this.gunaVScrollBar1);
             this.Controls.Add(this.contentPanel);
@@ -573,7 +554,6 @@
             this.Controls.Add(this.navPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = global::CrewNodeLauncher.Properties.Resources.CrewNodeLauncher;
-            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -2,9 +2,6 @@
 using System;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
-using CefSharp.WinForms;
-using CefSharp;
-using System.IO;
 
 namespace CrewNodeLauncher
 {
@@ -26,15 +23,6 @@ namespace CrewNodeLauncher
             // Register Protocol for "crewnode://"
             // ProtocolHandler.Register();
 
-            // Setup Cef
-            var settings = new CefSettings
-            {
-                BrowserSubprocessPath = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase,
-                                               Environment.Is64BitProcess ? "x64" : "x86",
-                                               "CefSharp.BrowserSubprocess.exe")
-            };
-            Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
-
             // Run application
             var startup = new Startup();
             Application.ApplicationExit += (object sender, EventArgs e) => startup.CloseSystemTray();
@@ -42,6 +30,7 @@ namespace CrewNodeLauncher
                 .ShowPreloader()
                 //.InitialiseSystemTray()
                 .GetRemoteVersion()
+                .InitialiseAuthentication()
                 .SetupMainScreen(args)
                 .Finalise();
 

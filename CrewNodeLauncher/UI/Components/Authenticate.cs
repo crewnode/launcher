@@ -1,14 +1,11 @@
-﻿using FontAwesome.Sharp;
+﻿using CrewNodeLauncher.API;
+using FontAwesome.Sharp;
 using Guna.UI.WinForms;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace CrewNodeLauncher.UI.Components
@@ -38,6 +35,9 @@ namespace CrewNodeLauncher.UI.Components
 
             // FontAwesome Icons
             loginWithDiscordBtn.Image = IconChar.Save.ToBitmap(Color.White);
+
+            // Check if we've been automatically logged in
+            if (Authentication.isLoggedIn()) hasLoggedIn();
         }
 
         private void PanelTab_Click(object sender, EventArgs e)
@@ -66,7 +66,7 @@ namespace CrewNodeLauncher.UI.Components
         private void loginWithDiscordBtn_Click(object sender, EventArgs e)
         {
             // Generate a UUID
-            Process.Start("https://crewno.de/api/launcher/auth/" + API.Authentication.clientLauncherId);
+            Process.Start("https://crewno.de/api/auth/" + API.Authentication.clientLauncherId);
 
             // Start a timer for status checks
             // TODO: Use a BackgroundWorker instead of a shitty timer
@@ -74,6 +74,7 @@ namespace CrewNodeLauncher.UI.Components
 
             // Update UI
             loginWithDiscordBtn.Visible = false;
+            authErrorLabel.Visible = false;
             authTimerLabel.Visible = true;
         }
 
@@ -85,17 +86,27 @@ namespace CrewNodeLauncher.UI.Components
             if (timeRunning % 5 == 0)
             {
                 // TODO: Status check!
-                if (API.Authentication.getStatusReport() || timeRunning >= 5)
+                if (API.Authentication.getStatusReport())
                 {
                     // Stop the timer from running to avoid it running forever
                     statusCheck.Stop();
 
                     // UI Update
-                    authBtn.Checked = false;
-                    dashboardBtn.Checked = true;
-                    authTabs.SelectTab(authTabs.TabPages.IndexOfKey("dashPanel"));
-                    usernameLabel.Text = API.Authentication.getUsername();
+                    hasLoggedIn();
                     return;
+                }
+
+                if (API.Authentication.requireReauth())
+                {
+                    // Stop the timer from running to avoid it running forever
+                    statusCheck.Stop();
+
+                    // UI Update
+                    authTimerLabel.Text = "05:00 remaining for authentication";
+                    authTimerLabel.Visible = false;
+                    authErrorLabel.Text = "Unable to authenticate with this session identifier. Please try again.";
+                    authErrorLabel.Visible = true;
+                    loginWithDiscordBtn.Visible = true;
                 }
             }
 
@@ -132,6 +143,14 @@ namespace CrewNodeLauncher.UI.Components
             authTimerLabel.Text = "05:00 remaining for authentication";
             authTabs.SelectTab(authTabs.TabPages.IndexOfKey("authPanel"));
             timeRunning = 0;
+        }
+
+        private void hasLoggedIn()
+        {
+            authBtn.Checked = false;
+            dashboardBtn.Checked = true;
+            authTabs.SelectTab(authTabs.TabPages.IndexOfKey("dashPanel"));
+            usernameLabel.Text = API.Authentication.getUsername();
         }
     }
 }
