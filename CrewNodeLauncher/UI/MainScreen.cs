@@ -1,6 +1,7 @@
 ﻿using CrewNodeLauncher.API;
 using CrewNodeLauncher.UI.Addons;
 using CrewNodeLauncher.Utils;
+using CrewNodeLauncher.Utils.Models;
 using FontAwesome.Sharp;
 using Guna.UI.Lib.ScrollBar;
 using Guna.UI.WinForms;
@@ -234,34 +235,52 @@ namespace CrewNodeLauncher
 
         private void pluginsBtn_Click(object sender, EventArgs e)
         {
-            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The plugins section is currently not implemented.\nCheck back soon!");
-            msg.ShowDialog();
+            using (CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The plugins section is currently not implemented.\nCheck back soon!"))
+                msg.ShowDialog();
             // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
         private void leaderboardBtn_Click(object sender, EventArgs e)
         {
-            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The leaderboard is currently not implemented.\nCheck back soon!");
-            msg.ShowDialog();
+            using (CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The leaderboard is currently not implemented.\nCheck back soon!"))
+                msg.ShowDialog();
             // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
         private void newsBtn_Click(object sender, EventArgs e)
         {
-            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The news section is currently not implemented.\nCheck back soon!");
-            msg.ShowDialog();
+            using (CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The news section is currently not implemented.\nCheck back soon!"))
+                msg.ShowDialog();
             // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
+        ConfigFile.Server _selectedServer;
         private void localServerBtn_Click(object sender, EventArgs e)
         {
-            updateSelectedNav((GunaAdvenceButton)sender);
+            if (_selectedServer != null)
+            {
+                updateSelectedNav((GunaAdvenceButton)sender);
+                return;
+            }
+
+            using (LocalServerSelection selector = new LocalServerSelection())
+            {
+                selector.ShowDialog();
+                if (selector.DialogResult == DialogResult.Cancel || selector.selectedServer == null)
+                {
+                    return;
+                }
+
+                _selectedServer = selector.selectedServer;
+                localServerBtn.Text = $"Local Server ({_selectedServer.name})";
+                updateSelectedNav((GunaAdvenceButton)sender);
+            }
         }
 
         private void settingsBtn_Click(object sender, EventArgs e)
         {
-            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The settings section is currently not implemented.\nCheck back soon!");
-            msg.ShowDialog();
+            using (CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The settings section is currently not implemented.\nCheck back soon!"))
+                msg.ShowDialog();
             // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
@@ -296,14 +315,12 @@ namespace CrewNodeLauncher
            new WindowsPrincipal(WindowsIdentity.GetCurrent())
                .IsInRole(WindowsBuiltInRole.Administrator);
 
-        static List<string> scrollBarResized = new List<string>();
-
         private enum authStates {
             USER_LOGGED_IN,
             USER_LOGGED_OUT,
         };
 
-        private void authenticationWorker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
+        private void authenticationWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker worker = (BackgroundWorker)sender;
             while (!worker.CancellationPending)

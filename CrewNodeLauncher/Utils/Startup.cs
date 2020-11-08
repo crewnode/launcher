@@ -78,6 +78,14 @@ namespace CrewNodeLauncher.Utils
             return this;
         }
 
+        public Startup InitialiseConfigFile()
+        {
+            SetLoaderText("Reading configuration");
+            Configuration.instance();
+            Thread.Sleep(100);
+            return this;
+        }
+
         private void SetLoaderText(string text)
         {
             while (_preloader == null || !_preloader.IsHandleCreated)

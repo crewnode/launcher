@@ -114,6 +114,24 @@
     <Compile Include="UI\Addons\CrewNodeMsgBox.Designer.cs">
       <DependentUpon>CrewNodeMsgBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\Addons\LocalServerNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Addons\LocalServerNew.Designer.cs">
+      <DependentUpon>LocalServerNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Addons\LocalServerSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Addons\LocalServerSelection.Designer.cs">
+      <DependentUpon>LocalServerSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Addons\ServerPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\Addons\ServerPreview.Designer.cs">
+      <DependentUpon>ServerPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Addons\SystemTray.cs" />
     <Compile Include="UI\Components\LocalServer.cs">
       <SubType>Form</SubType>
@@ -166,6 +184,7 @@
       <DependentUpon>Preloader.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Configuration.cs" />
+    <Compile Include="Utils\Models\ConfigFile.cs" />
     <Compile Include="Utils\Patcher.cs" />
     <Compile Include="Utils\ProtocolHandler.cs" />
     <Compile Include="Utils\Registry.cs" />
@@ -173,6 +192,15 @@
     <Compile Include="Utils\Updater.cs" />
     <EmbeddedResource Include="UI\Addons\CrewNodeMsgBox.resx">
       <DependentUpon>CrewNodeMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Addons\LocalServerNew.resx">
+      <DependentUpon>LocalServerNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Addons\LocalServerSelection.resx">
+      <DependentUpon>LocalServerSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Addons\ServerPreview.resx">
+      <DependentUpon>ServerPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\LocalServer.resx">
       <DependentUpon>LocalServer.cs</DependentUpon>
@@ -209,6 +237,10 @@
       <DependentUpon>Preloader.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.manifest" />
+    <AdditionalFiles Include="crewnode.config.json" />
+    <AdditionalFiles Include="example.config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </AdditionalFiles>
     <None Include="Security\Keys\CrewNodeLauncher-NOPW.snk" />
     <None Include="Security\Keys\CrewNodeLauncher.pfx" />
     <None Include="Security\Keys\CrewNodeLauncher.snk" />

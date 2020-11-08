@@ -31,6 +31,7 @@ namespace CrewNodeLauncher
                 //.InitialiseSystemTray()
                 .GetRemoteVersion()
                 .InitialiseAuthentication()
+                .InitialiseConfigFile()
                 .SetupMainScreen(args)
                 .Finalise();
 

@@ -35,15 +35,11 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.githubBtn = new Guna.UI.WinForms.GunaImageButton();
-            this.branchImg = new Guna.UI.WinForms.GunaPictureBox();
-            this.impostorVersionsCombo = new Guna.UI.WinForms.GunaComboBox();
             this.usersBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pluginsBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.stopBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.downloadBtn = new Guna.UI.WinForms.GunaImageButton();
             this.gunaPanel2.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.branchImg)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel2
@@ -104,11 +100,8 @@ namespace CrewNodeLauncher.UI.Components
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.gunaPanel1.Controls.Add(this.downloadBtn);
             this.gunaPanel1.Controls.Add(this.gunaAdvenceButton1);
             this.gunaPanel1.Controls.Add(this.githubBtn);
-            this.gunaPanel1.Controls.Add(this.branchImg);
-            this.gunaPanel1.Controls.Add(this.impostorVersionsCombo);
             this.gunaPanel1.Controls.Add(this.usersBtn);
             this.gunaPanel1.Controls.Add(this.pluginsBtn);
             this.gunaPanel1.Controls.Add(this.stopBtn);
@@ -167,34 +160,6 @@ namespace CrewNodeLauncher.UI.Components
             this.githubBtn.Size = new System.Drawing.Size(20, 20);
             this.githubBtn.TabIndex = 7;
             this.githubBtn.Click += new System.EventHandler(this.githubBtn_Click);
-            // 
-            // branchImg
-            // 
-            this.branchImg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.branchImg.BaseColor = System.Drawing.Color.White;
-            this.branchImg.Location = new System.Drawing.Point(642, 15);
-            this.branchImg.Name = "branchImg";
-            this.branchImg.Size = new System.Drawing.Size(20, 20);
-            this.branchImg.TabIndex = 6;
-            this.branchImg.TabStop = false;
-            // 
-            // impostorVersionsCombo
-            // 
-            this.impostorVersionsCombo.BackColor = System.Drawing.Color.Transparent;
-            this.impostorVersionsCombo.BaseColor = System.Drawing.Color.White;
-            this.impostorVersionsCombo.BorderColor = System.Drawing.Color.Silver;
-            this.impostorVersionsCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.impostorVersionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.impostorVersionsCombo.FocusedColor = System.Drawing.Color.Empty;
-            this.impostorVersionsCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.impostorVersionsCombo.ForeColor = System.Drawing.Color.Black;
-            this.impostorVersionsCombo.FormattingEnabled = true;
-            this.impostorVersionsCombo.Location = new System.Drawing.Point(668, 12);
-            this.impostorVersionsCombo.Name = "impostorVersionsCombo";
-            this.impostorVersionsCombo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.impostorVersionsCombo.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.impostorVersionsCombo.Size = new System.Drawing.Size(148, 26);
-            this.impostorVersionsCombo.TabIndex = 5;
             // 
             // usersBtn
             // 
@@ -298,21 +263,6 @@ namespace CrewNodeLauncher.UI.Components
             this.stopBtn.Text = "Stop";
             this.stopBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // downloadBtn
-            // 
-            this.downloadBtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.downloadBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.downloadBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.downloadBtn.Image = null;
-            this.downloadBtn.ImageSize = new System.Drawing.Size(64, 64);
-            this.downloadBtn.Location = new System.Drawing.Point(822, 15);
-            this.downloadBtn.Name = "downloadBtn";
-            this.downloadBtn.OnHoverImage = null;
-            this.downloadBtn.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.downloadBtn.Size = new System.Drawing.Size(20, 20);
-            this.downloadBtn.TabIndex = 9;
-            this.downloadBtn.Click += new System.EventHandler(this.downloadBtn_Click);
-            // 
             // LocalServer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,7 +276,6 @@ namespace CrewNodeLauncher.UI.Components
             this.Load += new System.EventHandler(this.LocalServer_Load);
             this.gunaPanel2.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.branchImg)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -339,10 +288,7 @@ namespace CrewNodeLauncher.UI.Components
         private Guna.UI.WinForms.GunaAdvenceButton pluginsBtn;
         private Guna.UI.WinForms.GunaAdvenceButton stopBtn;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private Guna.UI.WinForms.GunaPictureBox branchImg;
-        private Guna.UI.WinForms.GunaComboBox impostorVersionsCombo;
         private Guna.UI.WinForms.GunaImageButton githubBtn;
         private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
-        private Guna.UI.WinForms.GunaImageButton downloadBtn;
     }
 }
