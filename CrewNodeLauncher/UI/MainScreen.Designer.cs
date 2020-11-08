@@ -50,6 +50,7 @@
             this.contentPanel = new Guna.UI.WinForms.GunaPanel();
             this.gunaHScrollBar1 = new Guna.UI.WinForms.GunaHScrollBar();
             this.authenticationWorker = new System.ComponentModel.BackgroundWorker();
+            this.localServerBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.navPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cnImage2)).BeginInit();
             this.upperPanel.SuspendLayout();
@@ -60,6 +61,7 @@
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
+            this.navPanel.Controls.Add(this.localServerBtn);
             this.navPanel.Controls.Add(this.cnImage1);
             this.navPanel.Controls.Add(this.updateAvailableBtn);
             this.navPanel.Controls.Add(this.loginBtn);
@@ -73,7 +75,7 @@
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
-            this.navPanel.Size = new System.Drawing.Size(246, 572);
+            this.navPanel.Size = new System.Drawing.Size(246, 577);
             this.navPanel.TabIndex = 0;
             this.navPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.navPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
@@ -200,7 +202,7 @@
             this.settingsBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.settingsBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.settingsBtn.LineTop = 2;
-            this.settingsBtn.Location = new System.Drawing.Point(0, 328);
+            this.settingsBtn.Location = new System.Drawing.Point(-1, 387);
             this.settingsBtn.Name = "settingsBtn";
             this.settingsBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.settingsBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -499,7 +501,7 @@
             this.gunaVScrollBar1.Maximum = 100;
             this.gunaVScrollBar1.Name = "gunaVScrollBar1";
             this.gunaVScrollBar1.ScrollIdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(101)))), ((int)(((byte)(122)))));
-            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 462);
+            this.gunaVScrollBar1.Size = new System.Drawing.Size(10, 467);
             this.gunaVScrollBar1.TabIndex = 1;
             this.gunaVScrollBar1.ThumbColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
@@ -511,7 +513,7 @@
             this.contentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.contentPanel.Location = new System.Drawing.Point(246, 94);
             this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(881, 478);
+            this.contentPanel.Size = new System.Drawing.Size(881, 483);
             this.contentPanel.TabIndex = 2;
             this.contentPanel.ControlAdded += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
             this.contentPanel.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.contentPanel_ControlChanged);
@@ -523,7 +525,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaHScrollBar1.BackColor = System.Drawing.Color.Transparent;
             this.gunaHScrollBar1.LargeChange = 10;
-            this.gunaHScrollBar1.Location = new System.Drawing.Point(255, 556);
+            this.gunaHScrollBar1.Location = new System.Drawing.Point(255, 561);
             this.gunaHScrollBar1.Margin = new System.Windows.Forms.Padding(50, 3, 50, 3);
             this.gunaHScrollBar1.Maximum = 100;
             this.gunaHScrollBar1.Name = "gunaHScrollBar1";
@@ -541,12 +543,46 @@
             this.authenticationWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.authenticationWorker_DoWork);
             this.authenticationWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.authenticationWorker_ProgressChanged);
             // 
+            // localServerBtn
+            // 
+            this.localServerBtn.AnimationHoverSpeed = 0.07F;
+            this.localServerBtn.AnimationSpeed = 0.03F;
+            this.localServerBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.localServerBtn.BorderColor = System.Drawing.Color.Black;
+            this.localServerBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.localServerBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.localServerBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.localServerBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("localServerBtn.CheckedImage")));
+            this.localServerBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.localServerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.localServerBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.localServerBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.localServerBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.localServerBtn.ForeColor = System.Drawing.Color.White;
+            this.localServerBtn.Image = ((System.Drawing.Image)(resources.GetObject("localServerBtn.Image")));
+            this.localServerBtn.ImageOffsetX = 7;
+            this.localServerBtn.ImageSize = new System.Drawing.Size(22, 22);
+            this.localServerBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
+            this.localServerBtn.LineTop = 2;
+            this.localServerBtn.Location = new System.Drawing.Point(0, 328);
+            this.localServerBtn.Name = "localServerBtn";
+            this.localServerBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
+            this.localServerBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.localServerBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.localServerBtn.OnHoverImage = null;
+            this.localServerBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.localServerBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.localServerBtn.Size = new System.Drawing.Size(247, 59);
+            this.localServerBtn.TabIndex = 10;
+            this.localServerBtn.Text = "Local Server";
+            this.localServerBtn.Click += new System.EventHandler(this.localServerBtn_Click);
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1127, 572);
+            this.ClientSize = new System.Drawing.Size(1127, 577);
             this.Controls.Add(this.gunaHScrollBar1);
             this.Controls.Add(this.gunaVScrollBar1);
             this.Controls.Add(this.contentPanel);
@@ -592,6 +628,7 @@
         private Guna.UI.WinForms.GunaHScrollBar gunaHScrollBar1;
         private Guna.UI.WinForms.GunaAdvenceButton updateAvailableBtn;
         private System.ComponentModel.BackgroundWorker authenticationWorker;
+        private Guna.UI.WinForms.GunaAdvenceButton localServerBtn;
     }
 }
 

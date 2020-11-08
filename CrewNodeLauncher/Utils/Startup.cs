@@ -74,7 +74,7 @@ namespace CrewNodeLauncher.Utils
             SetLoaderText("Verifying launcher");
             RegistryUtil.GetClientLauncherId();
             Authentication.getStatusReport();
-            Thread.Sleep(2500);
+            Thread.Sleep(200);
             return this;
         }
 

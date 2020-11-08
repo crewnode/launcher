@@ -16,21 +16,26 @@ namespace CrewNodeLauncher.Utils
 
         public static string GetClientLauncherId(bool generateNew = false)
         {
+            string launcherId;
             if (!ApplicationKeyExists() || generateNew)
             {
                 // Create our registry key
-                string launcherId = generateNew ? Guid.NewGuid().ToString() : Authentication.clientLauncherId;
+                launcherId = generateNew ? Guid.NewGuid().ToString() : Authentication.clientLauncherId;
                 var regKey = Registry.CurrentUser.CreateSubKey(@"Software").CreateSubKey(Protocol);
                 regKey.SetValue("LauncherId", launcherId);
                 Authentication.clientLauncherId = launcherId;
                 return launcherId;
             }
-            else
-            {
-                string launcherId = (string)Registry.GetValue($"HKEY_CURRENT_USER\\Software\\{Protocol}", "LauncherId", null);
-                Authentication.clientLauncherId = launcherId;
-                return launcherId;
-            }
+
+            launcherId = (string)Registry.GetValue($"HKEY_CURRENT_USER\\Software\\{Protocol}", "LauncherId", null);
+            Authentication.clientLauncherId = launcherId;
+            return launcherId;
+        }
+
+        public static void RemoveClientLauncherId()
+        {
+            RegistryKey regKey = Registry.CurrentUser.OpenSubKey($"Software\\{Protocol}");
+            regKey.DeleteValue("LauncherId", false);
         }
     }
 }

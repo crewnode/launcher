@@ -1,4 +1,5 @@
 ﻿using CrewNodeLauncher.API;
+using CrewNodeLauncher.UI.Addons;
 using CrewNodeLauncher.Utils;
 using FontAwesome.Sharp;
 using Guna.UI.Lib.ScrollBar;
@@ -51,6 +52,7 @@ namespace CrewNodeLauncher
             pluginsBtn.Image = IconChar.Plug.ToBitmap(Color.White);
             leaderboardBtn.Image = IconChar.ChartBar.ToBitmap(Color.White);
             newsBtn.Image = IconChar.Newspaper.ToBitmap(Color.White);
+            localServerBtn.Image = IconChar.Server.ToBitmap(Color.White);
             settingsBtn.Image = IconChar.Cogs.ToBitmap(Color.White);
             loginBtn.Image = IconChar.User.ToBitmap(Color.White);
             updateAvailableBtn.Image = IconChar.Download.ToBitmap(Color.White);
@@ -136,6 +138,7 @@ namespace CrewNodeLauncher
                 loginBtn,
                 leaderboardBtn,
                 newsBtn,
+                localServerBtn,
                 settingsBtn
             };
 
@@ -143,12 +146,22 @@ namespace CrewNodeLauncher
             {
                 new UI.Components.Launcher(),
                 new UI.Components.Plugins(),
-                new UI.Components.Authenticate()
+                new UI.Components.Authenticate(),
+                null,
+                null,
+                new UI.Components.LocalServer(),
+                null
             };
 
             int i = 0;
             foreach (Form f in navForms)
             {
+                if (f == null)
+                {
+                    i++;
+                    continue;
+                }
+
                 f.TopLevel = false;
                 f.FormBorderStyle = FormBorderStyle.None;
                 f.BackColor = BackColor;
@@ -221,22 +234,35 @@ namespace CrewNodeLauncher
 
         private void pluginsBtn_Click(object sender, EventArgs e)
         {
-            updateSelectedNav((GunaAdvenceButton)sender);
+            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The plugins section is currently not implemented.\nCheck back soon!");
+            msg.ShowDialog();
+            // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
         private void leaderboardBtn_Click(object sender, EventArgs e)
         {
-            updateSelectedNav((GunaAdvenceButton)sender);
+            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The leaderboard is currently not implemented.\nCheck back soon!");
+            msg.ShowDialog();
+            // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
         private void newsBtn_Click(object sender, EventArgs e)
+        {
+            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The news section is currently not implemented.\nCheck back soon!");
+            msg.ShowDialog();
+            // updateSelectedNav((GunaAdvenceButton)sender);
+        }
+
+        private void localServerBtn_Click(object sender, EventArgs e)
         {
             updateSelectedNav((GunaAdvenceButton)sender);
         }
 
         private void settingsBtn_Click(object sender, EventArgs e)
         {
-            updateSelectedNav((GunaAdvenceButton)sender);
+            CrewNodeMsgBox msg = new CrewNodeMsgBox("Not Yet Implemented", "The settings section is currently not implemented.\nCheck back soon!");
+            msg.ShowDialog();
+            // updateSelectedNav((GunaAdvenceButton)sender);
         }
 
         private void contentPanel_Resize(object sender, EventArgs e)
@@ -311,22 +337,8 @@ namespace CrewNodeLauncher
 
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)
         {
+            if (hScrollHelper != null) hScrollHelper.UpdateScrollBar();
             if (vScrollHelper != null) vScrollHelper.UpdateScrollBar();
-            if (vScrollHelper != null)
-            {
-                vScrollHelper.UpdateScrollBar();
-                if (!contentPanel.VerticalScroll.Visible)
-                {
-                    foreach (Control c in contentPanel.Controls)
-                    {
-                        if (!scrollBarResized.Contains(c.Name))
-                        {
-                            c.Width = c.Width + 33;
-                            scrollBarResized.Add(c.Name);
-                        }
-                    }
-                }
-            }
         }
     }
 }

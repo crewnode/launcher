@@ -29,7 +29,6 @@ namespace CrewNodeLauncher.UI.Components
         /// </summary>
         private void InitializeComponent()
         {
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Launcher));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.rmPatchBtn = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -57,7 +56,7 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(864, 48);
+            this.gunaPanel1.Size = new System.Drawing.Size(880, 48);
             this.gunaPanel1.TabIndex = 0;
             // 
             // rmPatchBtn
@@ -81,7 +80,7 @@ namespace CrewNodeLauncher.UI.Components
             this.rmPatchBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.rmPatchBtn.LineBottom = 2;
             this.rmPatchBtn.LineColor = System.Drawing.Color.Transparent;
-            this.rmPatchBtn.Location = new System.Drawing.Point(766, 0);
+            this.rmPatchBtn.Location = new System.Drawing.Point(782, 0);
             this.rmPatchBtn.Name = "rmPatchBtn";
             this.rmPatchBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(71)))), ((int)(((byte)(92)))));
             this.rmPatchBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -172,7 +171,7 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaPictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaPictureBox1.Location = new System.Drawing.Point(0, 48);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(864, 435);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(880, 433);
             this.gunaPictureBox1.TabIndex = 1;
             this.gunaPictureBox1.TabStop = false;
             // 
@@ -185,7 +184,7 @@ namespace CrewNodeLauncher.UI.Components
             this.launcherTabs.Location = new System.Drawing.Point(0, 48);
             this.launcherTabs.Name = "launcherTabs";
             this.launcherTabs.SelectedIndex = 0;
-            this.launcherTabs.Size = new System.Drawing.Size(864, 435);
+            this.launcherTabs.Size = new System.Drawing.Size(880, 433);
             this.launcherTabs.TabIndex = 2;
             // 
             // playPanel
@@ -195,7 +194,7 @@ namespace CrewNodeLauncher.UI.Components
             this.playPanel.Location = new System.Drawing.Point(4, 22);
             this.playPanel.Name = "playPanel";
             this.playPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.playPanel.Size = new System.Drawing.Size(856, 409);
+            this.playPanel.Size = new System.Drawing.Size(872, 407);
             this.playPanel.TabIndex = 0;
             this.playPanel.Text = "Play";
             this.playPanel.UseVisualStyleBackColor = true;
@@ -219,7 +218,7 @@ namespace CrewNodeLauncher.UI.Components
             this.gunaAdvenceButton1.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(745, 358);
+            this.gunaAdvenceButton1.Location = new System.Drawing.Point(760, 356);
             this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
             this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -249,7 +248,7 @@ namespace CrewNodeLauncher.UI.Components
             this.launchGameBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.launchGameBtn.ImageSize = new System.Drawing.Size(20, 20);
             this.launchGameBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.launchGameBtn.Location = new System.Drawing.Point(800, 358);
+            this.launchGameBtn.Location = new System.Drawing.Point(815, 356);
             this.launchGameBtn.Name = "launchGameBtn";
             this.launchGameBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             this.launchGameBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -265,7 +264,7 @@ namespace CrewNodeLauncher.UI.Components
             this.patchPanel.Location = new System.Drawing.Point(4, 22);
             this.patchPanel.Name = "patchPanel";
             this.patchPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.patchPanel.Size = new System.Drawing.Size(856, 409);
+            this.patchPanel.Size = new System.Drawing.Size(872, 392);
             this.patchPanel.TabIndex = 1;
             this.patchPanel.Text = "Patch";
             this.patchPanel.UseVisualStyleBackColor = true;
@@ -274,7 +273,7 @@ namespace CrewNodeLauncher.UI.Components
             // 
             this.rmPatchPanel.Location = new System.Drawing.Point(4, 22);
             this.rmPatchPanel.Name = "rmPatchPanel";
-            this.rmPatchPanel.Size = new System.Drawing.Size(856, 409);
+            this.rmPatchPanel.Size = new System.Drawing.Size(872, 392);
             this.rmPatchPanel.TabIndex = 2;
             this.rmPatchPanel.Text = "Remove Patch";
             this.rmPatchPanel.UseVisualStyleBackColor = true;
@@ -283,10 +282,11 @@ namespace CrewNodeLauncher.UI.Components
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(864, 483);
+            this.ClientSize = new System.Drawing.Size(880, 481);
             this.Controls.Add(this.launcherTabs);
             this.Controls.Add(this.gunaPictureBox1);
             this.Controls.Add(this.gunaPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Launcher";
             this.Text = "Launcher";
             this.Load += new System.EventHandler(this.Launcher_Load);

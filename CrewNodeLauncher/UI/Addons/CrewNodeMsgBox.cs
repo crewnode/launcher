@@ -1,15 +1,29 @@
 ﻿using System;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace CrewNodeLauncher.UI
+namespace CrewNodeLauncher.UI.Addons
 {
-    public partial class Preloader : Form
+    public partial class CrewNodeMsgBox : Form
     {
-        public Preloader()
+        public CrewNodeMsgBox(string title, string messageText)
         {
             InitializeComponent();
+            this.titleLbl.Text = title;
+            this.messageLbl.Text = messageText;
+        }
+
+        private void CrewNodeMsgBox_Load(object sender, EventArgs e)
+        {
+            Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
+            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -23,10 +37,14 @@ namespace CrewNodeLauncher.UI
             int nHeightEllipse // height of ellipse
         );
 
-        private void Preloader_Load(object sender, EventArgs e)
+        private void exitButton_Click(object sender, EventArgs e)
         {
-            Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
-            Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            this.Close();
+        }
+
+        private void okBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         private bool relocatingForm = false;

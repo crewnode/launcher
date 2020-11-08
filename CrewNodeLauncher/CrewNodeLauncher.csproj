@@ -101,12 +101,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="API\AppVeyor.cs" />
     <Compile Include="API\Authentication.cs" />
     <Compile Include="API\Base.cs" />
+    <Compile Include="API\Models\BuildHistory.cs" />
     <Compile Include="API\Models\Error.cs" />
     <Compile Include="API\Models\UserAuth.cs" />
     <Compile Include="Security\SignatureCheck.cs" />
+    <Compile Include="UI\Addons\CrewNodeMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Addons\CrewNodeMsgBox.Designer.cs">
+      <DependentUpon>CrewNodeMsgBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Addons\SystemTray.cs" />
+    <Compile Include="UI\Components\LocalServer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Components\LocalServer.Designer.cs">
+      <DependentUpon>LocalServer.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\Components\Launcher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +171,12 @@
     <Compile Include="Utils\Registry.cs" />
     <Compile Include="Utils\Startup.cs" />
     <Compile Include="Utils\Updater.cs" />
+    <EmbeddedResource Include="UI\Addons\CrewNodeMsgBox.resx">
+      <DependentUpon>CrewNodeMsgBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Components\LocalServer.resx">
+      <DependentUpon>LocalServer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI\Components\Launcher.resx">
       <DependentUpon>Launcher.cs</DependentUpon>
     </EmbeddedResource>

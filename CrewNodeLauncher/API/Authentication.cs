@@ -60,7 +60,7 @@ namespace CrewNodeLauncher.API
         {
             if (!isAuthenticated) return false;
             // TODO: Send removal of authentication to server
-            // TODO: Remove registry key from system
+            RegistryUtil.RemoveClientLauncherId();
             isAuthenticated = false;
             userForcedLogout = true;
             clientLauncherId = Guid.NewGuid().ToString();
