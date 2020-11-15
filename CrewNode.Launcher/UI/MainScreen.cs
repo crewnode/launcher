@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
@@ -271,15 +272,37 @@ namespace CrewNode.Launcher
 
             using (LocalServerSelection selector = new LocalServerSelection())
             {
-                selector.ShowDialog();
-                if (selector.DialogResult == DialogResult.Cancel || selector.selectedServer == null)
+                Bitmap img = new Bitmap(this.ClientRectangle.Width, this.ClientRectangle.Height);
+                using (Graphics g = Graphics.FromImage(img))
                 {
-                    return;
+                    g.CompositingMode = CompositingMode.SourceOver;
+                    g.CopyFromScreen(this.PointToScreen(new Point(0, 0)), new Point(0, 0), this.ClientRectangle.Size);
+                    double alpha = 0.65;
+                    Color dark = Color.FromArgb((int)(255 * alpha), Color.Black);
+                    using (Brush b = new SolidBrush(dark))
+                        g.FillRectangle(b, this.ClientRectangle);
                 }
 
-                _selectedServer = selector.selectedServer;
-                localServerBtn.Text = $"Local Server ({_selectedServer.name})";
-                updateSelectedNav((GunaAdvenceButton)sender);
+                // Create our temporary "darken" panel
+                using (Panel p = new Panel())
+                {
+                    p.Location = new Point(0, 0);
+                    p.Size = this.ClientRectangle.Size;
+                    p.BackgroundImage = img;
+                    this.Controls.Add(p);
+                    p.BringToFront();
+
+                    // Disable server seletor
+                    selector.ShowDialog();
+                    if (selector.DialogResult == DialogResult.Cancel || selector.selectedServer == null)
+                    {
+                        return;
+                    }
+
+                    _selectedServer = selector.selectedServer;
+                    localServerBtn.Text = $"Local Server ({_selectedServer.name})";
+                    updateSelectedNav((GunaAdvenceButton)sender);
+                }
             }
         }
 
