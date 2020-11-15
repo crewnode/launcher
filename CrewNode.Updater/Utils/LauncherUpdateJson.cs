@@ -66,7 +66,6 @@ namespace CrewNode.Updater.Utils
                 }
             }
             catch (Exception ex) {
-                Console.WriteLine("Ex: " + ex.Message + "\n\n\n" + ex.StackTrace);
                 return null;
             }
         }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -47,7 +48,6 @@ namespace CrewNode.Updater
             bgWorker.RunWorkerCompleted += BgWorker_RunWorkerCompleted;
 
             // Download file
-            Console.WriteLine("Update URL: " + updateInfo.Uri);
             try { webClient.DownloadFileAsync(updateInfo.Uri, this.tempFile); }
             catch { this.DialogResult = DialogResult.No; this.Close(); }
         }
@@ -62,7 +62,6 @@ namespace CrewNode.Updater
         {
             if (e.Error != null)
             {
-                Console.WriteLine(e.Error.Message);
                 this.DialogResult = DialogResult.No;
                 this.Close();
                 return;
@@ -76,6 +75,7 @@ namespace CrewNode.Updater
             else
             {
                 progressLbl.Text = "Verifying";
+                Thread.Sleep(1500);
                 downloadProgressBar.Style = Guna.UI.WinForms.ProgressBarStyle.Marquee;
                 bgWorker.RunWorkerAsync(new string[] { this.tempFile, this.shaHash });
             }

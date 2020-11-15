@@ -36,35 +36,18 @@ namespace CrewNode.Updater
         {
             ILauncherUpdateable app = (ILauncherUpdateable)e.Argument;
             if (!LauncherUpdateJson.ExistsOnServer(app.LauncherJson))
-            {
-                Console.WriteLine("Update cancelled");
                 e.Cancel = true;
-            }
             else
-            {
-                Console.WriteLine("Parse");
                 e.Result = LauncherUpdateJson.Parse(app.LauncherJson, app.LauncherIdentifier);
-                Console.WriteLine("parsed");
-            }
         }
 
         private void BgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            Console.WriteLine("RunWorkerCompleted");
             if (!e.Cancelled)
             {
                 LauncherUpdateJson update = (LauncherUpdateJson)e.Result;
                 if (update != null && update.IsNewerVersion(this.appInfo.LauncherAssembly.GetName().Version))
-                {
-                    Console.WriteLine("DownloadUpdate");
                     this.DownloadUpdate(update);
-                }
-                else
-                    Console.WriteLine("Online version: " + update.Version + ", local version: " + this.appInfo.LauncherAssembly.GetName().Version);
-            }
-            else
-            {
-                Console.WriteLine("Cancelled, piece of shit.");
             }
         }
 
@@ -84,10 +67,7 @@ namespace CrewNode.Updater
             else if (r == DialogResult.Abort)
                 MessageBox.Show("The update has been cancelled.", "Update Cancelled", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
-            {
-                Console.WriteLine("Update failed: " + r.ToString());
                 MessageBox.Show("The update failed.", "Update Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
         private void UpdateLauncher(string tempFilePath, string curPath, string newPath, string launchArgs)
