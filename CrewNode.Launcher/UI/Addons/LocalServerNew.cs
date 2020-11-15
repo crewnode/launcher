@@ -33,6 +33,10 @@ namespace CrewNode.Launcher.UI.Addons
                 impostorVersionsCombo.Items.Add(b);
             }
 
+            // Update dropdown height
+            impostorVersionsCombo.DropDownStyle = ComboBoxStyle.Simple;
+            impostorVersionsCombo.MaxDropDownItems = 10;
+
             // Clipping
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
@@ -64,21 +68,7 @@ namespace CrewNode.Launcher.UI.Addons
 
             // Download the ZIP file
             okBtn.Enabled = false;
-            WebClient c = AppVeyor.downloadBuild(AppVeyor.getBuildDownload(buildItem), okBtn);
-            c.DownloadProgressChanged += (object s2, System.Net.DownloadProgressChangedEventArgs e2) => Client_DownloadProgressChanged(s2, e2);
-            c.DownloadFileCompleted += (object s3, AsyncCompletedEventArgs e3) => Client_DownloadFileCompleted(s3, e3);
-        }
-
-        private void Client_DownloadProgressChanged(object sender, System.Net.DownloadProgressChangedEventArgs e)
-        {
-            okBtn.Text = e.ProgressPercentage.ToString() + "%";
-        }
-
-        private void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e)
-        {
-            // TODO: Return new server via this.DialogResult
-            // TODO: then update LocalServerSelection.cs to refresh the server list, and then auto select it
-            this.Close();
+            AppVeyor.downloadBuild(this, AppVeyor.getBuildDownload(buildItem), buildItem.Hash);
         }
 
         private void exitButton_Click(object sender, EventArgs e)

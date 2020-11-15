@@ -31,6 +31,7 @@ namespace CrewNode.Launcher.UI.Addons
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LocalServerSelection));
             this.upperPanel = new Guna.UI.WinForms.GunaPanel();
+            this.newServerBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.titleLbl = new System.Windows.Forms.Label();
             this.headerPanel = new Guna.UI.WinForms.GunaPanel();
             this.exitButton = new Guna.UI.WinForms.GunaAdvenceButton();
@@ -38,7 +39,6 @@ namespace CrewNode.Launcher.UI.Addons
             this.okBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.gunaVScrollBar1 = new Guna.UI.WinForms.GunaVScrollBar();
-            this.gunaAdvenceButton1 = new Guna.UI.WinForms.GunaAdvenceButton();
             this.upperPanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.formDragIndicator)).BeginInit();
@@ -47,7 +47,7 @@ namespace CrewNode.Launcher.UI.Addons
             // upperPanel
             // 
             this.upperPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.upperPanel.Controls.Add(this.gunaAdvenceButton1);
+            this.upperPanel.Controls.Add(this.newServerBtn);
             this.upperPanel.Controls.Add(this.titleLbl);
             this.upperPanel.Controls.Add(this.headerPanel);
             this.upperPanel.Dock = System.Windows.Forms.DockStyle.Top;
@@ -55,6 +55,37 @@ namespace CrewNode.Launcher.UI.Addons
             this.upperPanel.Name = "upperPanel";
             this.upperPanel.Size = new System.Drawing.Size(800, 96);
             this.upperPanel.TabIndex = 18;
+            // 
+            // newServerBtn
+            // 
+            this.newServerBtn.AnimationHoverSpeed = 0.07F;
+            this.newServerBtn.AnimationSpeed = 0.03F;
+            this.newServerBtn.BaseColor = System.Drawing.Color.Green;
+            this.newServerBtn.BorderColor = System.Drawing.Color.Black;
+            this.newServerBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.newServerBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.newServerBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.newServerBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("newServerBtn.CheckedImage")));
+            this.newServerBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.newServerBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.newServerBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.newServerBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.newServerBtn.ForeColor = System.Drawing.Color.White;
+            this.newServerBtn.Image = ((System.Drawing.Image)(resources.GetObject("newServerBtn.Image")));
+            this.newServerBtn.ImageSize = new System.Drawing.Size(20, 20);
+            this.newServerBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
+            this.newServerBtn.Location = new System.Drawing.Point(673, 46);
+            this.newServerBtn.Name = "newServerBtn";
+            this.newServerBtn.OnHoverBaseColor = System.Drawing.Color.DarkGreen;
+            this.newServerBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.newServerBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.newServerBtn.OnHoverImage = null;
+            this.newServerBtn.OnHoverLineColor = System.Drawing.Color.Lime;
+            this.newServerBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.newServerBtn.Size = new System.Drawing.Size(115, 42);
+            this.newServerBtn.TabIndex = 19;
+            this.newServerBtn.Text = "New Server";
+            this.newServerBtn.Click += new System.EventHandler(this.newServerBtn_Click);
             // 
             // titleLbl
             // 
@@ -188,37 +219,6 @@ namespace CrewNode.Launcher.UI.Addons
             this.gunaVScrollBar1.ThumbHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.gunaVScrollBar1.ThumbPressedColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
             // 
-            // gunaAdvenceButton1
-            // 
-            this.gunaAdvenceButton1.AnimationHoverSpeed = 0.07F;
-            this.gunaAdvenceButton1.AnimationSpeed = 0.03F;
-            this.gunaAdvenceButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.BorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.gunaAdvenceButton1.CheckedBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.CheckedForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.CheckedImage = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.CheckedImage")));
-            this.gunaAdvenceButton1.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.gunaAdvenceButton1.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaAdvenceButton1.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaAdvenceButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.gunaAdvenceButton1.ForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaAdvenceButton1.Image")));
-            this.gunaAdvenceButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.gunaAdvenceButton1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.Location = new System.Drawing.Point(673, 46);
-            this.gunaAdvenceButton1.Name = "gunaAdvenceButton1";
-            this.gunaAdvenceButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaAdvenceButton1.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaAdvenceButton1.OnHoverImage = null;
-            this.gunaAdvenceButton1.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(58)))), ((int)(((byte)(170)))));
-            this.gunaAdvenceButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaAdvenceButton1.Size = new System.Drawing.Size(115, 42);
-            this.gunaAdvenceButton1.TabIndex = 19;
-            this.gunaAdvenceButton1.Text = "New Server";
-            this.gunaAdvenceButton1.Click += new System.EventHandler(this.gunaAdvenceButton1_Click);
-            // 
             // LocalServerSelection
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -249,6 +249,6 @@ namespace CrewNode.Launcher.UI.Addons
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI.WinForms.GunaAdvenceButton exitButton;
         private Guna.UI.WinForms.GunaVScrollBar gunaVScrollBar1;
-        private Guna.UI.WinForms.GunaAdvenceButton gunaAdvenceButton1;
+        private Guna.UI.WinForms.GunaAdvenceButton newServerBtn;
     }
 }

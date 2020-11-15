@@ -56,6 +56,7 @@ namespace CrewNode.Launcher.API.Models
         public BuildHistory.Build Build { get; set; }
         public string Text { get; set; }
         public object Value { get; set; }
+        public string Hash { get; set; }
 
         public override string ToString()
         {

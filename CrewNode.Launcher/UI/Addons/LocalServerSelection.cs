@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System.Drawing;
 using Guna.UI.Lib.ScrollBar;
+using FontAwesome.Sharp;
 
 namespace CrewNode.Launcher.UI.Addons
 {
@@ -39,6 +40,9 @@ namespace CrewNode.Launcher.UI.Addons
             // Clipping
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+
+            // Icons
+            newServerBtn.Image = IconChar.Plus.ToBitmap(Color.White);
 
             // Scrollbar
             int vertScrollWidth = SystemInformation.VerticalScrollBarWidth;
@@ -85,7 +89,7 @@ namespace CrewNode.Launcher.UI.Addons
             this.Close();
         }
 
-        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        private void newServerBtn_Click(object sender, EventArgs e)
         {
             using (LocalServerNew newServer = new LocalServerNew())
             {

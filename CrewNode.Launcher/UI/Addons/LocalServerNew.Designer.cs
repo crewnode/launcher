@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace CrewNode.Launcher.UI.Addons
 {
     partial class LocalServerNew
@@ -42,6 +44,7 @@ namespace CrewNode.Launcher.UI.Addons
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.nameImg = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaProgressBar1 = new Guna.UI.WinForms.GunaProgressBar();
             ((System.ComponentModel.ISupportInitialize)(this.branchImg)).BeginInit();
             this.upperPanel.SuspendLayout();
             this.headerPanel.SuspendLayout();
@@ -65,12 +68,16 @@ namespace CrewNode.Launcher.UI.Addons
             this.impostorVersionsCombo.BaseColor = System.Drawing.Color.White;
             this.impostorVersionsCombo.BorderColor = System.Drawing.Color.Silver;
             this.impostorVersionsCombo.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.impostorVersionsCombo.DropDownHeight = 400;
             this.impostorVersionsCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.impostorVersionsCombo.DropDownWidth = 400;
             this.impostorVersionsCombo.FocusedColor = System.Drawing.Color.Empty;
             this.impostorVersionsCombo.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.impostorVersionsCombo.ForeColor = System.Drawing.Color.Black;
             this.impostorVersionsCombo.FormattingEnabled = true;
+            this.impostorVersionsCombo.IntegralHeight = false;
             this.impostorVersionsCombo.Location = new System.Drawing.Point(40, 190);
+            this.impostorVersionsCombo.MaxDropDownItems = 10;
             this.impostorVersionsCombo.Name = "impostorVersionsCombo";
             this.impostorVersionsCombo.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.impostorVersionsCombo.OnHoverItemForeColor = System.Drawing.Color.White;
@@ -176,7 +183,7 @@ namespace CrewNode.Launcher.UI.Addons
             this.okBtn.ImageSize = new System.Drawing.Size(22, 22);
             this.okBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
             this.okBtn.LineTop = 2;
-            this.okBtn.Location = new System.Drawing.Point(0, 239);
+            this.okBtn.Location = new System.Drawing.Point(0, 235);
             this.okBtn.Name = "okBtn";
             this.okBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
             this.okBtn.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -184,7 +191,7 @@ namespace CrewNode.Launcher.UI.Addons
             this.okBtn.OnHoverImage = null;
             this.okBtn.OnHoverLineColor = System.Drawing.Color.Red;
             this.okBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.okBtn.Size = new System.Drawing.Size(310, 44);
+            this.okBtn.Size = new System.Drawing.Size(310, 48);
             this.okBtn.TabIndex = 20;
             this.okBtn.Text = "Create";
             this.okBtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -236,11 +243,26 @@ namespace CrewNode.Launcher.UI.Addons
             this.nameImg.TabIndex = 24;
             this.nameImg.TabStop = false;
             // 
+            // gunaProgressBar1
+            // 
+            this.gunaProgressBar1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.gunaProgressBar1.BorderColor = System.Drawing.Color.Black;
+            this.gunaProgressBar1.ColorStyle = Guna.UI.WinForms.ColorStyle.Default;
+            this.gunaProgressBar1.IdleColor = System.Drawing.Color.Transparent;
+            this.gunaProgressBar1.Location = new System.Drawing.Point(0, 273);
+            this.gunaProgressBar1.Name = "gunaProgressBar1";
+            this.gunaProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(104)))), ((int)(((byte)(123)))));
+            this.gunaProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(84)))), ((int)(((byte)(103)))));
+            this.gunaProgressBar1.Size = new System.Drawing.Size(310, 10);
+            this.gunaProgressBar1.TabIndex = 25;
+            this.gunaProgressBar1.Visible = false;
+            // 
             // LocalServerNew
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(310, 283);
+            this.Controls.Add(this.gunaProgressBar1);
             this.Controls.Add(this.nameImg);
             this.Controls.Add(this.gunaLabel2);
             this.Controls.Add(this.gunaLabel1);
@@ -272,10 +294,11 @@ namespace CrewNode.Launcher.UI.Addons
         private Guna.UI.WinForms.GunaPanel headerPanel;
         private Guna.UI.WinForms.GunaAdvenceButton exitButton;
         private Guna.UI.WinForms.GunaPictureBox formDragIndicator;
-        private Guna.UI.WinForms.GunaAdvenceButton okBtn;
         private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaPictureBox nameImg;
+        public Guna.UI.WinForms.GunaAdvenceButton okBtn;
+        public Guna.UI.WinForms.GunaProgressBar gunaProgressBar1;
     }
 }

@@ -11,6 +11,8 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.ComponentModel;
 using Guna.UI.WinForms;
+using CrewNode.Launcher.UI.Addons;
+using System.IO;
 
 namespace CrewNode.Launcher.API
 {
@@ -18,7 +20,7 @@ namespace CrewNode.Launcher.API
     {
         // https://stackoverflow.com/questions/415620/redirect-console-output-to-textbox-in-separate-program
 
-        private const string impostorHistory = "https://ci.appveyor.com/api/projects/Impostor/Impostor/history?recordsNumber=20";
+        private const string impostorHistory = "https://ci.appveyor.com/api/projects/Impostor/Impostor/history?recordsNumber=50";
         private const string lastJobUrl = "https://ci.appveyor.com/api/projects/Impostor/Impostor/branch/dev";
 
         public static List<AppComboBoxItem> getImpostorBuilds()
@@ -34,10 +36,16 @@ namespace CrewNode.Launcher.API
                 BuildHistory.Item rawBuilds = JsonConvert.DeserializeObject<BuildHistory.Item>(rawData);
                 foreach (BuildHistory.Build b in rawBuilds.builds)
                 {
-                    if (b.committerUsername != "AeonLucid" || b.branch != "dev")
-                        continue;
+                    //if (b.committerUsername != "AeonLucid" || b.branch != "dev")
+                    //    continue;
 
-                    builds.Add(new AppComboBoxItem() { Build = b, Text = b.version, Value = b.buildId });
+                    builds.Add(new AppComboBoxItem()
+                    {
+                        Build = b,
+                        Text = $"{b.version} ({b.branch}, by {b.committerUsername}) @ {b.commitId.Substring(0, 7)}",
+                        Value = b.buildId,
+                        Hash = b.commitId
+                    }); ;
                 }
             } catch { }
             client.Dispose();
@@ -92,20 +100,59 @@ namespace CrewNode.Launcher.API
             return "";
         }
 
-        public static WebClient downloadBuild(string url, GunaAdvenceButton btn)
+        public static string downloadBuild(LocalServerNew parent, string url, string commitHash)
         {
             // TODO: Read configuration
 
             // Download directory
             string serversDirectory = Application.StartupPath + @"\servers";
+            if (!Directory.Exists(serversDirectory))
+                Directory.CreateDirectory(serversDirectory);
 
             // TODO: Generate saving directory from id & create directory
 
             // TODO: Add to configuration
 
-            WebClient client = new WebClient();
-            client.DownloadFileAsync(new Uri(url), $"{serversDirectory}\\server.zip"); // TODO: update output path to new directory
-            return client;
+            // Check if we already have a ZIP with this hash
+            // TODO: May need to go if outputting to temp directory
+            string outputFile = Path.Combine(serversDirectory, $"{commitHash}.zip");
+            if (File.Exists(outputFile))
+                return outputFile;
+
+            using (WebClient client = new WebClient())
+            {
+                client.DownloadProgressChanged += (object s2, DownloadProgressChangedEventArgs e2) => Client_DownloadProgressChanged(s2, e2, parent);
+                client.DownloadFileCompleted += (object s3, AsyncCompletedEventArgs e3) => Client_DownloadFileCompleted(s3, e3, parent);
+                // TODO: Should we output to "Directory.GetTempFileName()" and then extract ?
+                client.DownloadFileAsync(new Uri(url), outputFile); // TODO: update output path to new directory
+            }
+
+            return outputFile;
+        }
+
+        private static void Client_DownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e, LocalServerNew parent)
+        {
+            parent.Invoke((MethodInvoker)delegate ()
+            {
+                if (!parent.gunaProgressBar1.Visible)
+                {
+                    parent.gunaProgressBar1.Visible = true;
+                    parent.gunaProgressBar1.BringToFront();
+                }
+
+                parent.okBtn.Text = e.ProgressPercentage.ToString() + "%";
+                parent.gunaProgressBar1.Value = e.ProgressPercentage;
+            });
+        }
+
+        private static void Client_DownloadFileCompleted(object sender, AsyncCompletedEventArgs e, LocalServerNew parent)
+        {
+            // TODO: Return new server via this.DialogResult
+            // TODO: then update LocalServerSelection.cs to refresh the server list, and then auto select it
+            parent.Invoke((MethodInvoker)delegate ()
+            {
+                parent.Close();
+            });
         }
     }
 }
