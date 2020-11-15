@@ -75,7 +75,8 @@ namespace CrewNode.Updater
             else
             {
                 progressLbl.Text = "Verifying";
-                Thread.Sleep(1500);
+                this.PerformLayout();
+                Thread.Sleep(750);
                 downloadProgressBar.Style = Guna.UI.WinForms.ProgressBarStyle.Marquee;
                 bgWorker.RunWorkerAsync(new string[] { this.tempFile, this.shaHash });
             }
@@ -90,6 +91,7 @@ namespace CrewNode.Updater
                 e.Result = DialogResult.No;
             else
                 e.Result = DialogResult.OK;
+            Thread.Sleep(500);
         }
 
         private void BgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
