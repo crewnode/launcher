@@ -38,7 +38,7 @@ namespace CrewNode.Launcher.Utils
         public static SemVersion getLocalVersion()
         {
             if (_localVersion != null) return _localVersion;
-            return (_localVersion = new SemVersion(0, 1, 1, "beta.1"));
+            return (_localVersion = new SemVersion(0, 1, 2, "beta"));
         }
 
         public static bool isUpdateAvailable()
