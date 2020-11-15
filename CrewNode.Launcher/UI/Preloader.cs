@@ -27,6 +27,7 @@ namespace CrewNode.Launcher.UI
         {
             Guna.UI.Lib.GraphicsHelper.ShadowForm(this);
             Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            this.cnLauncherVersion.Text = Launcher.Utils.Updater.getLocalVersion().ToString();
         }
 
         private bool relocatingForm = false;

@@ -53,7 +53,7 @@ namespace CrewNode.Launcher.UI
             this.cnLauncherVersion.Name = "cnLauncherVersion";
             this.cnLauncherVersion.Size = new System.Drawing.Size(307, 28);
             this.cnLauncherVersion.TabIndex = 10;
-            this.cnLauncherVersion.Text = "v0.1-alpha1";
+            this.cnLauncherVersion.Text = "...";
             this.cnLauncherVersion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // cnImage1
