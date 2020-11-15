@@ -10,7 +10,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{A6680A68-8F92-4E70-99F2-A38F05EFB902}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>CrewNode.Launcher</RootNamespace>
     <AssemblyName>CrewNode.Launcher</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -184,6 +184,12 @@
       <DependentUpon>Preloader.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Configuration.cs" />
+    <Compile Include="Utils\Controls\GlassyPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Utils\Controls\LabelX.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Utils\Models\ConfigFile.cs" />
     <Compile Include="Utils\Patcher.cs" />
     <Compile Include="Utils\ProtocolHandler.cs" />
@@ -284,6 +290,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\separator2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CrewNode.Updater\CrewNode.Updater.csproj">
+      <Project>{1b21fc30-82aa-4f3d-acd7-ae516c5574df}</Project>
+      <Name>CrewNode.Updater</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

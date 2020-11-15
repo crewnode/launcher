@@ -1,16 +1,14 @@
-﻿using CrewNode.Launcher.API;
-using CrewNode.Launcher.UI.Addons;
+﻿using CrewNode.Launcher.UI.Addons;
 using CrewNode.Launcher.Utils;
 using CrewNode.Launcher.Utils.Models;
 using FontAwesome.Sharp;
 using Guna.UI.Lib.ScrollBar;
 using Guna.UI.WinForms;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Security.Principal;
 using System.Threading;
@@ -18,12 +16,26 @@ using System.Windows.Forms;
 
 namespace CrewNode.Launcher
 {
-    public partial class MainScreen : Form
+    public partial class MainScreen : Form, CrewNode.Updater.Utils.ILauncherUpdateable
     {
+        // Updateable fields
+        public string LauncherIdentifier { get { return "CrewNodeLauncher"; } }
+        public Assembly LauncherAssembly { get { return Assembly.GetExecutingAssembly(); } }
+        public System.Drawing.Icon LauncherIcon { get { return this.Icon; } }
+        public Uri LauncherJson { get { return new Uri("https://crewnode.net/api/get/loader"); } }
+        public Form LauncherUpdaterContext { get { return this; } }
+        private Updater.LauncherUpdater updater;
+
+        // MainScreen Form
         public MainScreen(string[] args)
         {
             InitializeComponent();
             Thread.Sleep(500);
+            updater = new CrewNode.Updater.LauncherUpdater(this);
+            updater.DoUpdate();
+
+
+
             if (args.Length > 0)
             {
                 // TODO: Parse the arguments
@@ -59,10 +71,10 @@ namespace CrewNode.Launcher
             updateAvailableBtn.Image = IconChar.Download.ToBitmap(Color.White);
 
             // Get version
-            cnLauncherVersion.Text = $"v{Updater.getLocalVersion()}";
+            cnLauncherVersion.Text = $"v{Utils.Updater.getLocalVersion()}";
 
             // Check for available update
-            if (Updater.isUpdateAvailable())
+            if (Utils.Updater.isUpdateAvailable())
             {
                 updateAvailableBtn.Visible = true;
                 loginBtn.Location = new Point(loginBtn.Location.X, loginBtn.Location.Y - updateAvailableBtn.Height);
@@ -285,7 +297,7 @@ namespace CrewNode.Launcher
         private void updateAvailableBtn_Click(object sender, EventArgs e)
         {
             reassignControls();
-            UI.Components.Updater notYetAdded = new UI.Components.Updater()
+            UI.Components.Updater notYetAdded = new UI.Components.Updater(this)
             {
                 TopLevel = false,
                 Visible = true,
@@ -342,6 +354,14 @@ namespace CrewNode.Launcher
                     loginBtn.Text = "Login";
                     break;
             }
+        }
+
+        private void MainScreen_Leave(object sender, EventArgs e)
+        {
+        }
+
+        private void MainScreen_Enter(object sender, EventArgs e)
+        {
         }
 
         private void contentPanel_ControlChanged(object sender, ControlEventArgs e)

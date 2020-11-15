@@ -37,6 +37,7 @@ namespace CrewNode.Launcher.UI.Components
             this.authBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.authTabs = new System.Windows.Forms.TabControl();
             this.authPanel = new System.Windows.Forms.TabPage();
+            this.authErrorLabel = new Guna.UI.WinForms.GunaLabel();
             this.loginWithDiscordBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.authTimerLabel = new Guna.UI.WinForms.GunaLabel();
             this.authHelperLabel = new Guna.UI.WinForms.GunaLabel();
@@ -46,7 +47,6 @@ namespace CrewNode.Launcher.UI.Components
             this.welcomeLabel = new Guna.UI.WinForms.GunaLabel();
             this.accountPanel = new System.Windows.Forms.TabPage();
             this.statusCheck = new System.Windows.Forms.Timer(this.components);
-            this.authErrorLabel = new Guna.UI.WinForms.GunaLabel();
             this.authHeaderPanel.SuspendLayout();
             this.authTabs.SuspendLayout();
             this.authPanel.SuspendLayout();
@@ -191,11 +191,23 @@ namespace CrewNode.Launcher.UI.Components
             this.authPanel.Controls.Add(this.authHelperLabel);
             this.authPanel.Location = new System.Drawing.Point(4, 22);
             this.authPanel.Name = "authPanel";
-            this.authPanel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.authPanel.Padding = new System.Windows.Forms.Padding(3);
             this.authPanel.Size = new System.Drawing.Size(855, 408);
             this.authPanel.TabIndex = 0;
             this.authPanel.Text = "Authenticate";
             this.authPanel.UseVisualStyleBackColor = true;
+            // 
+            // authErrorLabel
+            // 
+            this.authErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.authErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.authErrorLabel.Location = new System.Drawing.Point(168, 253);
+            this.authErrorLabel.Name = "authErrorLabel";
+            this.authErrorLabel.Size = new System.Drawing.Size(519, 24);
+            this.authErrorLabel.TabIndex = 8;
+            this.authErrorLabel.Text = "{{ errorMessage }}";
+            this.authErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.authErrorLabel.Visible = false;
             // 
             // loginWithDiscordBtn
             // 
@@ -338,18 +350,6 @@ namespace CrewNode.Launcher.UI.Components
             this.statusCheck.Interval = 1000;
             this.statusCheck.Tick += new System.EventHandler(this.statusCheck_Tick);
             // 
-            // authErrorLabel
-            // 
-            this.authErrorLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.authErrorLabel.ForeColor = System.Drawing.Color.Red;
-            this.authErrorLabel.Location = new System.Drawing.Point(168, 253);
-            this.authErrorLabel.Name = "authErrorLabel";
-            this.authErrorLabel.Size = new System.Drawing.Size(519, 24);
-            this.authErrorLabel.TabIndex = 8;
-            this.authErrorLabel.Text = "{{ errorMessage }}";
-            this.authErrorLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.authErrorLabel.Visible = false;
-            // 
             // Authenticate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -357,6 +357,7 @@ namespace CrewNode.Launcher.UI.Components
             this.ClientSize = new System.Drawing.Size(863, 483);
             this.Controls.Add(this.authHeaderPanel);
             this.Controls.Add(this.authTabs);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Authenticate";
             this.Text = "Authenticate";
             this.Load += new System.EventHandler(this.Authenticate_Load);

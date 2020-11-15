@@ -24,7 +24,7 @@ namespace CrewNode.Launcher.Utils
             WebClient client = new WebClient();
             try
             {
-                var version = client.DownloadString("https://crewnode.net/version");
+                var version = client.DownloadString("https://crewnode.net/api/launcher/version");
                 SemVersion.TryParse(version, out _remoteVersion);
                 if (_remoteVersion == null) return (_remoteVersion = new SemVersion(0, 0, 0, "unknown", "error"));
             }
@@ -38,7 +38,7 @@ namespace CrewNode.Launcher.Utils
         public static SemVersion getLocalVersion()
         {
             if (_localVersion != null) return _localVersion;
-            return (_localVersion = new SemVersion(0, 0, 1, "alpha1"));
+            return (_localVersion = new SemVersion(0, 1, 1, "beta.1"));
         }
 
         public static bool isUpdateAvailable()

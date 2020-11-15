@@ -31,15 +31,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainScreen));
             this.navPanel = new Guna.UI.WinForms.GunaPanel();
             this.cnImage1 = new Guna.UI.WinForms.GunaImageButton();
-            this.updateAvailableBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.loginBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.cnLauncherVersion = new Guna.UI.WinForms.GunaLabel();
+            this.cnImage2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.localServerBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.settingsBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.leaderboardBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.newsBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.pluginsBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.launcherBtn = new Guna.UI.WinForms.GunaAdvenceButton();
-            this.cnImage2 = new Guna.UI.WinForms.GunaPictureBox();
+            this.updateAvailableBtn = new Guna.UI.WinForms.GunaAdvenceButton();
+            this.loginBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.upperPanel = new Guna.UI.WinForms.GunaPanel();
             this.innerFormName = new Guna.UI.WinForms.GunaLabel();
             this.headerPanel = new Guna.UI.WinForms.GunaPanel();
@@ -50,7 +51,6 @@
             this.contentPanel = new Guna.UI.WinForms.GunaPanel();
             this.gunaHScrollBar1 = new Guna.UI.WinForms.GunaHScrollBar();
             this.authenticationWorker = new System.ComponentModel.BackgroundWorker();
-            this.localServerBtn = new Guna.UI.WinForms.GunaAdvenceButton();
             this.navPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cnImage2)).BeginInit();
             this.upperPanel.SuspendLayout();
@@ -61,17 +61,17 @@
             // navPanel
             // 
             this.navPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(64)))), ((int)(((byte)(83)))));
-            this.navPanel.Controls.Add(this.localServerBtn);
             this.navPanel.Controls.Add(this.cnImage1);
-            this.navPanel.Controls.Add(this.updateAvailableBtn);
-            this.navPanel.Controls.Add(this.loginBtn);
             this.navPanel.Controls.Add(this.cnLauncherVersion);
+            this.navPanel.Controls.Add(this.cnImage2);
+            this.navPanel.Controls.Add(this.localServerBtn);
             this.navPanel.Controls.Add(this.settingsBtn);
             this.navPanel.Controls.Add(this.leaderboardBtn);
             this.navPanel.Controls.Add(this.newsBtn);
             this.navPanel.Controls.Add(this.pluginsBtn);
             this.navPanel.Controls.Add(this.launcherBtn);
-            this.navPanel.Controls.Add(this.cnImage2);
+            this.navPanel.Controls.Add(this.updateAvailableBtn);
+            this.navPanel.Controls.Add(this.loginBtn);
             this.navPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.navPanel.Location = new System.Drawing.Point(0, 0);
             this.navPanel.Name = "navPanel";
@@ -97,75 +97,6 @@
             this.cnImage1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
             this.cnImage1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
             // 
-            // updateAvailableBtn
-            // 
-            this.updateAvailableBtn.AnimationHoverSpeed = 0.07F;
-            this.updateAvailableBtn.AnimationSpeed = 0.03F;
-            this.updateAvailableBtn.BaseColor = System.Drawing.Color.Red;
-            this.updateAvailableBtn.BorderColor = System.Drawing.Color.Black;
-            this.updateAvailableBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.updateAvailableBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.updateAvailableBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.updateAvailableBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("updateAvailableBtn.CheckedImage")));
-            this.updateAvailableBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.updateAvailableBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.updateAvailableBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.updateAvailableBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.updateAvailableBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.updateAvailableBtn.ForeColor = System.Drawing.Color.White;
-            this.updateAvailableBtn.Image = ((System.Drawing.Image)(resources.GetObject("updateAvailableBtn.Image")));
-            this.updateAvailableBtn.ImageOffsetX = 7;
-            this.updateAvailableBtn.ImageSize = new System.Drawing.Size(22, 22);
-            this.updateAvailableBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
-            this.updateAvailableBtn.LineTop = 2;
-            this.updateAvailableBtn.Location = new System.Drawing.Point(0, 537);
-            this.updateAvailableBtn.Name = "updateAvailableBtn";
-            this.updateAvailableBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.updateAvailableBtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.updateAvailableBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.updateAvailableBtn.OnHoverImage = null;
-            this.updateAvailableBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.updateAvailableBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.updateAvailableBtn.Size = new System.Drawing.Size(247, 40);
-            this.updateAvailableBtn.TabIndex = 9;
-            this.updateAvailableBtn.Text = "An update is available!";
-            this.updateAvailableBtn.Visible = false;
-            this.updateAvailableBtn.Click += new System.EventHandler(this.updateAvailableBtn_Click);
-            // 
-            // loginBtn
-            // 
-            this.loginBtn.AnimationHoverSpeed = 0.07F;
-            this.loginBtn.AnimationSpeed = 0.03F;
-            this.loginBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.loginBtn.BorderColor = System.Drawing.Color.Black;
-            this.loginBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.loginBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.loginBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.loginBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("loginBtn.CheckedImage")));
-            this.loginBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.loginBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.loginBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.loginBtn.ForeColor = System.Drawing.Color.White;
-            this.loginBtn.Image = ((System.Drawing.Image)(resources.GetObject("loginBtn.Image")));
-            this.loginBtn.ImageOffsetX = 7;
-            this.loginBtn.ImageSize = new System.Drawing.Size(22, 22);
-            this.loginBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
-            this.loginBtn.LineTop = 2;
-            this.loginBtn.Location = new System.Drawing.Point(0, 518);
-            this.loginBtn.Name = "loginBtn";
-            this.loginBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
-            this.loginBtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.loginBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.loginBtn.OnHoverImage = null;
-            this.loginBtn.OnHoverLineColor = System.Drawing.Color.Red;
-            this.loginBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.loginBtn.Size = new System.Drawing.Size(247, 59);
-            this.loginBtn.TabIndex = 8;
-            this.loginBtn.Text = "Login";
-            this.loginBtn.Click += new System.EventHandler(this.loginRegisterBtn_Click);
-            // 
             // cnLauncherVersion
             // 
             this.cnLauncherVersion.BackColor = System.Drawing.Color.Transparent;
@@ -180,6 +111,55 @@
             this.cnLauncherVersion.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
             this.cnLauncherVersion.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
             this.cnLauncherVersion.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
+            // 
+            // cnImage2
+            // 
+            this.cnImage2.BackColor = System.Drawing.Color.Transparent;
+            this.cnImage2.BackgroundImage = global::CrewNode.Launcher.Properties.Resources.crewnode_text;
+            this.cnImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.cnImage2.BaseColor = System.Drawing.Color.White;
+            this.cnImage2.Location = new System.Drawing.Point(63, 22);
+            this.cnImage2.Name = "cnImage2";
+            this.cnImage2.Size = new System.Drawing.Size(164, 58);
+            this.cnImage2.TabIndex = 0;
+            this.cnImage2.TabStop = false;
+            this.cnImage2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
+            this.cnImage2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
+            this.cnImage2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
+            // 
+            // localServerBtn
+            // 
+            this.localServerBtn.AnimationHoverSpeed = 0.07F;
+            this.localServerBtn.AnimationSpeed = 0.03F;
+            this.localServerBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.localServerBtn.BorderColor = System.Drawing.Color.Black;
+            this.localServerBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.localServerBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.localServerBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.localServerBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("localServerBtn.CheckedImage")));
+            this.localServerBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.localServerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.localServerBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.localServerBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.localServerBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.localServerBtn.ForeColor = System.Drawing.Color.White;
+            this.localServerBtn.Image = ((System.Drawing.Image)(resources.GetObject("localServerBtn.Image")));
+            this.localServerBtn.ImageOffsetX = 7;
+            this.localServerBtn.ImageSize = new System.Drawing.Size(22, 22);
+            this.localServerBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
+            this.localServerBtn.LineTop = 2;
+            this.localServerBtn.Location = new System.Drawing.Point(0, 328);
+            this.localServerBtn.Name = "localServerBtn";
+            this.localServerBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
+            this.localServerBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.localServerBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.localServerBtn.OnHoverImage = null;
+            this.localServerBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.localServerBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.localServerBtn.Size = new System.Drawing.Size(247, 59);
+            this.localServerBtn.TabIndex = 10;
+            this.localServerBtn.Text = "Local Server";
+            this.localServerBtn.Click += new System.EventHandler(this.localServerBtn_Click);
             // 
             // settingsBtn
             // 
@@ -351,20 +331,74 @@
             this.launcherBtn.Text = "Launcher";
             this.launcherBtn.Click += new System.EventHandler(this.launcherBtn_Click);
             // 
-            // cnImage2
+            // updateAvailableBtn
             // 
-            this.cnImage2.BackColor = System.Drawing.Color.Transparent;
-            this.cnImage2.BackgroundImage = global::CrewNode.Launcher.Properties.Resources.crewnode_text;
-            this.cnImage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.cnImage2.BaseColor = System.Drawing.Color.White;
-            this.cnImage2.Location = new System.Drawing.Point(63, 22);
-            this.cnImage2.Name = "cnImage2";
-            this.cnImage2.Size = new System.Drawing.Size(164, 58);
-            this.cnImage2.TabIndex = 0;
-            this.cnImage2.TabStop = false;
-            this.cnImage2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseDown);
-            this.cnImage2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseMove);
-            this.cnImage2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.formDrag_MouseUp);
+            this.updateAvailableBtn.AnimationHoverSpeed = 0.07F;
+            this.updateAvailableBtn.AnimationSpeed = 0.03F;
+            this.updateAvailableBtn.BaseColor = System.Drawing.Color.Red;
+            this.updateAvailableBtn.BorderColor = System.Drawing.Color.Black;
+            this.updateAvailableBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.updateAvailableBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.updateAvailableBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.updateAvailableBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("updateAvailableBtn.CheckedImage")));
+            this.updateAvailableBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.updateAvailableBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.updateAvailableBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.updateAvailableBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.updateAvailableBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.updateAvailableBtn.ForeColor = System.Drawing.Color.White;
+            this.updateAvailableBtn.Image = ((System.Drawing.Image)(resources.GetObject("updateAvailableBtn.Image")));
+            this.updateAvailableBtn.ImageOffsetX = 7;
+            this.updateAvailableBtn.ImageSize = new System.Drawing.Size(22, 22);
+            this.updateAvailableBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
+            this.updateAvailableBtn.LineTop = 2;
+            this.updateAvailableBtn.Location = new System.Drawing.Point(0, 537);
+            this.updateAvailableBtn.Name = "updateAvailableBtn";
+            this.updateAvailableBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.updateAvailableBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.updateAvailableBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.updateAvailableBtn.OnHoverImage = null;
+            this.updateAvailableBtn.OnHoverLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.updateAvailableBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.updateAvailableBtn.Size = new System.Drawing.Size(247, 40);
+            this.updateAvailableBtn.TabIndex = 9;
+            this.updateAvailableBtn.Text = "An update is available!";
+            this.updateAvailableBtn.Visible = false;
+            this.updateAvailableBtn.Click += new System.EventHandler(this.updateAvailableBtn_Click);
+            // 
+            // loginBtn
+            // 
+            this.loginBtn.AnimationHoverSpeed = 0.07F;
+            this.loginBtn.AnimationSpeed = 0.03F;
+            this.loginBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
+            this.loginBtn.BorderColor = System.Drawing.Color.Black;
+            this.loginBtn.CheckedBaseColor = System.Drawing.Color.Gray;
+            this.loginBtn.CheckedBorderColor = System.Drawing.Color.Black;
+            this.loginBtn.CheckedForeColor = System.Drawing.Color.White;
+            this.loginBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("loginBtn.CheckedImage")));
+            this.loginBtn.CheckedLineColor = System.Drawing.Color.DimGray;
+            this.loginBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.loginBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.loginBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.loginBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.loginBtn.ForeColor = System.Drawing.Color.White;
+            this.loginBtn.Image = ((System.Drawing.Image)(resources.GetObject("loginBtn.Image")));
+            this.loginBtn.ImageOffsetX = 7;
+            this.loginBtn.ImageSize = new System.Drawing.Size(22, 22);
+            this.loginBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
+            this.loginBtn.LineTop = 2;
+            this.loginBtn.Location = new System.Drawing.Point(0, 518);
+            this.loginBtn.Name = "loginBtn";
+            this.loginBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
+            this.loginBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.loginBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.loginBtn.OnHoverImage = null;
+            this.loginBtn.OnHoverLineColor = System.Drawing.Color.Red;
+            this.loginBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.loginBtn.Size = new System.Drawing.Size(247, 59);
+            this.loginBtn.TabIndex = 8;
+            this.loginBtn.Text = "Login";
+            this.loginBtn.Click += new System.EventHandler(this.loginRegisterBtn_Click);
             // 
             // upperPanel
             // 
@@ -543,40 +577,6 @@
             this.authenticationWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.authenticationWorker_DoWork);
             this.authenticationWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.authenticationWorker_ProgressChanged);
             // 
-            // localServerBtn
-            // 
-            this.localServerBtn.AnimationHoverSpeed = 0.07F;
-            this.localServerBtn.AnimationSpeed = 0.03F;
-            this.localServerBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(38)))), ((int)(((byte)(49)))));
-            this.localServerBtn.BorderColor = System.Drawing.Color.Black;
-            this.localServerBtn.CheckedBaseColor = System.Drawing.Color.Gray;
-            this.localServerBtn.CheckedBorderColor = System.Drawing.Color.Black;
-            this.localServerBtn.CheckedForeColor = System.Drawing.Color.White;
-            this.localServerBtn.CheckedImage = ((System.Drawing.Image)(resources.GetObject("localServerBtn.CheckedImage")));
-            this.localServerBtn.CheckedLineColor = System.Drawing.Color.DimGray;
-            this.localServerBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.localServerBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.localServerBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.localServerBtn.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.localServerBtn.ForeColor = System.Drawing.Color.White;
-            this.localServerBtn.Image = ((System.Drawing.Image)(resources.GetObject("localServerBtn.Image")));
-            this.localServerBtn.ImageOffsetX = 7;
-            this.localServerBtn.ImageSize = new System.Drawing.Size(22, 22);
-            this.localServerBtn.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(56)))), ((int)(((byte)(81)))), ((int)(((byte)(102)))));
-            this.localServerBtn.LineTop = 2;
-            this.localServerBtn.Location = new System.Drawing.Point(0, 328);
-            this.localServerBtn.Name = "localServerBtn";
-            this.localServerBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(14)))), ((int)(((byte)(24)))), ((int)(((byte)(36)))));
-            this.localServerBtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.localServerBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.localServerBtn.OnHoverImage = null;
-            this.localServerBtn.OnHoverLineColor = System.Drawing.Color.Red;
-            this.localServerBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.localServerBtn.Size = new System.Drawing.Size(247, 59);
-            this.localServerBtn.TabIndex = 10;
-            this.localServerBtn.Text = "Local Server";
-            this.localServerBtn.Click += new System.EventHandler(this.localServerBtn_Click);
-            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,6 +595,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CrewNode";
             this.Load += new System.EventHandler(this.MainScreen_Load);
+            this.Enter += new System.EventHandler(this.MainScreen_Enter);
+            this.Leave += new System.EventHandler(this.MainScreen_Leave);
             this.navPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cnImage2)).EndInit();
             this.upperPanel.ResumeLayout(false);
